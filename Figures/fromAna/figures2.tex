@@ -1,0 +1,258 @@
+\documentclass{article}
+
+\usepackage{pstricks,multido}
+\SpecialCoor
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{pspicture}
+\usepackage{comment}
+
+\newenvironment{env1}{\psset{linewidth=1.0pt,linecolor=black}}
+
+\newenvironment{ellipse1}{\psset{fillcolor=black!10, linecolor=black, linewidth=0.5pt, fillstyle=solid}}
+
+\newenvironment{ellipse2}{\psset{fillcolor=black!50, linecolor=black, linewidth=0.5pt, fillstyle=solid}}
+
+\begin{document}
+%%%%%\psellipse[linecolor=orange](1,0.5)(1.4,1)
+%%%%%\psellipticarc[linecolor=lightblue,linewidth=1.5pt](6,0)(7.3,4){130}{230}
+%%%%%%%fillcolor=orange!30
+%\psline[linestyle=dashed](0,2.5)(3,2.5)
+%\pscircle[fillstyle=solid,fillcolor=black](0,2.5){0.07}
+%\pscircle[fillstyle=solid,fillcolor=black](3,2.5){0.15}
+
+
+%%%1
+%%%CHOICE: line width 1.1 or 1, and closer together, colors
+\PreviewBorder=10pt
+\begin{figure}
+\psset{yunit=0.55cm}
+\psset{xunit=0.55cm}
+\begin{pspicture}(0,0)(36,5)
+
+\begin{env1}
+\psline(0,0)(0,5)
+\psline(2,0)(2,5)
+\psline(4,0)(4,5)
+
+\psline(7,0)(7,5)
+\psline(9,0)(9,5)
+\psline(11,0)(11,5)
+\psline(14,0)(14,5)
+\psline(16,0)(16,5)
+\psline(18,0)(18,5)
+
+\psline(21,0)(21,5)
+\psline(23,0)(23,5)
+\psline(25,0)(25,5)
+%\psline(28,0)(28,5)
+%\psline(29.75,0)(29.75,5)
+%\psline(31.5,0)(31.5,5)
+%\psline[linestyle=dashed,linewidth=0.5pt](28,1.1)(29.75,1.1)
+%\psline[linestyle=dashed,linewidth=0.5pt](28,2.5)(29.75,2.5)
+%\psline[linestyle=dashed,linewidth=0.5pt](28,3.9)(29.75,3.9)
+\psline(28,0)(28,5)
+\psline(30,0)(30,5)
+\psline(32,0)(32,5)
+\end{env1}
+
+\psline[linestyle=dashed,linewidth=0.5pt](14,2.5)(16,2.5)
+\psline[linestyle=dashed,linewidth=0.5pt](21,3.45)(23,3.45)
+\psline[linestyle=dashed,linewidth=0.5pt](21,1.55)(23,1.55)
+\psline[linestyle=dashed,linewidth=0.5pt](28,1.1)(30,1.1)
+\psline[linestyle=dashed,linewidth=0.5pt](28,2.5)(30,2.5)
+\psline[linestyle=dashed,linewidth=0.5pt](28,3.9)(30,3.9)
+\uput[0](4.8,2.5){\Large $=$}
+\uput[0](11.8,2.5){\Large $+$}
+\uput[0](18.8,2.5){\Large $+$}
+\uput[0](25.8,2.5){\Large $+$}
+\uput[0](32.8,2.5){\Large $+$}
+\uput[0](34.4,2.5){\Large $\ldots$}
+
+\begin{ellipse1}
+\psellipse(1,2.5)(1.5,0.75)
+\end{ellipse1}
+\uput[-90](1,3.3){\emph{$V^{(2+1)}_{12,eff}$}}
+
+%\uput[-90](0,0){$1$}\uput[-90](2,0){$2$}\uput[-90](4,0){$3$}
+
+\end{pspicture}
+% \caption{try2}
+%\label{asd}
+\end{figure}
+
+
+%%%%2
+\PreviewBorder=10pt
+\begin{figure}
+\psset{yunit=0.55cm}
+\psset{xunit=0.55cm}
+\begin{pspicture}(0,0)(29,5)
+
+\begin{env1}
+\psline(0,0)(0,5)
+\psline(2,0)(2,5)
+\psline(4,0)(4,5)
+
+\psline(7,0)(7,5)
+\psline(9,0)(9,5)
+\psline(11,0)(11,5)
+\psline(14,0)(14,5)
+\psline(16,0)(16,5)
+\psline(18,0)(18,5)
+
+\psline(21,0)(21,5)
+\psline(23,0)(23,5)
+\psline(25,0)(25,5)
+\end{env1}
+
+\uput[0](4.8,2.5){\Large $=$}
+\uput[0](11.8,2.5){\Large $+$}
+\uput[0](18.8,2.5){\Large $+$}
+\uput[0](25.8,2.5){\Large $+$}
+\uput[0](27.4,2.5){\Large $\ldots$}
+
+\begin{ellipse1}
+\psellipse(2,2.5)(2.5,0.75)
+\psellipse(8,2.5)(1.5,0.65)
+\psellipse(15,2.5)(1.5,0.65)
+\psellipse(17,3.7)(1.5,0.65)
+\psellipse(22,3.7)(1.5,0.65)
+\psellipse(24,2.5)(1.5,0.65)
+\psellipse(22,1.3)(1.5,0.65)
+\end{ellipse1}
+\uput[-90](2,3.3){\emph{$V^{(3+0)}_{12,eff}$}}
+
+%\uput[-90](0,0){$1$}\uput[-90](2,0){$2$}\uput[-90](4,0){$3$}
+
+\end{pspicture}
+% \caption{try2}
+%\label{asd}
+\end{figure}
+
+
+
+%%%%3
+\PreviewBorder=10pt
+\begin{figure}
+\psset{yunit=0.55cm}
+\psset{xunit=0.55cm}
+\begin{pspicture}(0,-6.5)(31,5)
+
+\begin{env1}
+\psline(0,0)(0,5)
+\psline(2,0)(2,5)
+\psline(4,0)(4,5)
+
+\psline(7,0)(7,5)
+\psline(9,0)(9,5)
+\psline(11,0)(11,5)
+
+\psline(14,0)(14,5)
+\psline(16,0)(16,5)
+\psline(18,0)(18,5)
+
+\psline(21,0)(21,5)
+\psline(23,0)(23,5)
+\psline(25,0)(25,5)
+\end{env1}
+
+\psline[linestyle=dashed,linewidth=0.5pt](7,2.5)(11,2.5)
+\psline[linestyle=dashed,linewidth=0.5pt](14,2.5)(18,2.5)
+\psline[linestyle=dashed,linewidth=0.5pt](21,2.5)(25,2.5)
+
+\uput[0](4.8,2.5){\Large $=$}
+\uput[0](11.8,2.5){\Large $+$}
+\uput[0](18.8,2.5){\Large $+$}
+\uput[0](25.8,2.5){\Large $+$}
+
+\begin{ellipse2}
+\psellipse(2,2.5)(2.5,0.75)
+\end{ellipse2}
+\begin{ellipse1}
+\psellipse(15,3.7)(1.5,0.65)
+\psellipse(23,3.7)(2.5,0.65)
+%\psellipse(22,3.7)(1.5,0.65)
+%\psellipse(24,2.5)(1.5,0.65)
+%\psellipse(22,1.3)(1.5,0.65)
+\end{ellipse1}
+\uput[-90](2,3.1){\emph{$V_{123,eff}$}}
+
+%\uput[-90](0,0){$1$}\uput[-90](2,0){$2$}\uput[-90](4,0){$3$}
+
+
+%%%2nd part
+\begin{env1}
+\psline(9,-6.5)(9,-1.5)
+\psline(11,-6.5)(11,-1.5)
+\psline(13,-6.5)(13,-1.5)
+
+\psline(16,-6.5)(16,-1.5)
+\psline(18,-6.5)(18,-1.5)
+\psline(20,-6.5)(20,-1.5)
+
+\psline(23,-6.5)(23,-1.5)
+\psline(25,-6.5)(25,-1.5)
+\psline(27,-6.5)(27,-1.5)
+\end{env1}
+
+\uput[0](6.8,-4){\Large $+$}
+\uput[0](13.8,-4){\Large $+$}
+\uput[0](20.8,-4){\Large $+$}
+\uput[0](27.8,-4){\Large $+$}
+\uput[0](29.4,-4){\Large $\ldots$}
+
+\begin{ellipse1}
+\psellipse(17,-4)(1.5,0.65)
+\psellipse(25,-4)(2.5,0.65)
+\end{ellipse1}
+
+\psline[linestyle=dashed,linewidth=0.5pt](9,-2.8)(13,-2.8)
+\psline[linestyle=dashed,linewidth=0.5pt](9,-5.2)(13,-5.2)
+\psline[linestyle=dashed,linewidth=0.5pt](16,-2.8)(20,-2.8)
+\psline[linestyle=dashed,linewidth=0.5pt](16,-5.2)(20,-5.2)
+\psline[linestyle=dashed,linewidth=0.5pt](23,-2.8)(27,-2.8)
+\psline[linestyle=dashed,linewidth=0.5pt](23,-5.2)(27,-5.2)
+
+\end{pspicture}
+% \caption{try2}
+%\label{asd}
+\end{figure}
+
+
+
+
+
+%%%1
+\PreviewBorder=10pt
+\begin{figure}
+\psset{yunit=0.55cm}
+\psset{xunit=0.55cm}
+\begin{pspicture}(0,0)(9,11)
+
+
+\psline(0,0)(0,5)
+\psline(2,0)(4,5)
+\psline(2,5)(4,0)
+\psline[linestyle=dashed](0,2.5)(3,2.5)
+\pscircle[fillstyle=solid,fillcolor=black](0,2.5){0.07}
+\pscircle[fillstyle=solid,fillcolor=black](3,2.5){0.15}
+
+\psline(5,0)(9,5)
+\psline(9,0)(5,5)
+\psline(7,0)(7,5)
+\pscircle[fillstyle=solid,fillcolor=black](7,2.5){0.15}
+
+\psline(2.5,6)(2.5,11)
+\psline(4.5,6)(4.5,11)
+\psline(6.5,6)(6.5,11)
+\psline[linestyle=dashed](2.5,8.5)(6.5,8.5)
+\pscircle[fillstyle=solid,fillcolor=black](2.5,8.5){0.07}
+\pscircle[fillstyle=solid,fillcolor=black](6.5,8.5){0.07}
+\pscircle[fillstyle=solid,fillcolor=black](4.5,8.5){0.15}
+
+\end{pspicture}
+% \caption{try2}
+%\label{asd}
+\end{figure}
+
+\end{document}

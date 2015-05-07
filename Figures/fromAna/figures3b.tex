@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage{pstricks,multido}
+\usepackage{graphicx}
+\SpecialCoor
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{pspicture}
+\usepackage{comment}
+
+\newenvironment{env1}{\psset{linewidth=1.0pt,linecolor=black}}
+
+\newenvironment{ellipse1}{\psset{fillcolor=black!10, linecolor=black, linewidth=0.5pt, fillstyle=solid}}
+
+\newenvironment{ellipse2}{\psset{fillcolor=black!50, linecolor=black, linewidth=0.5pt, fillstyle=solid}}
+
+\begin{document}
+%%%%%\psellipse[linecolor=orange](1,0.5)(1.4,1)
+%%%%%\psellipticarc[linecolor=lightblue,linewidth=1.5pt](6,0)(7.3,4){130}{230}
+%%%%%%%fillcolor=orange!30
+%\psline[linestyle=dashed](0,2.5)(3,2.5)
+%\pscircle[fillstyle=solid,fillcolor=black](0,2.5){0.07}
+%\pscircle[fillstyle=solid,fillcolor=black](3,2.5){0.15}
+
+
+
+
+%%%1
+%%%CHOICE: line width 1.1 or 1, and closer together, colors
+\PreviewBorder=10pt
+\begin{figure}
+\begin{pspicture}(0,-3)(17,3)
+
+\put(-0.4,0){\includegraphics[page=1]{figures3}}
+\put(2.8,1.6){\Large $=$}
+\put(3.5,0){\includegraphics[page=2]{figures3}}
+\put(6.7,1.6){\Large $+$}
+\put(7.5,0){\includegraphics[page=3]{figures3}}
+\put(10.7,1.6){\Large $+$}
+\put(11.3,0){\includegraphics[page=4]{figures3}}%%11.5
+\put(14.3,1.6){\Large $+$}%%14.7
+
+\put(4.5,-1.9){\Large $+$}
+\put(5.3,-3.5){\includegraphics[page=5]{figures3}}
+\put(8.7,-1.9){\Large $+$}%%8.5
+\put(9.5,-3.5){\includegraphics[page=6]{figures3}}%%9.3
+\put(12.3,-1.9){\Large $+$}%%12.5
+\put(13.3,-3.5){\includegraphics[page=7]{figures3}}
+
+\put(15.5,-1.9){\Large $+$}
+\put(16.5,-1.9){\Large $\ldots$}
+
+\end{pspicture}
+\end{figure}
+
+
+
+\end{document}
