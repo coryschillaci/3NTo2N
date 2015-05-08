@@ -67,10 +67,12 @@
 \newcommand{\yukawanoabs}[1]{\frac{e^{-m_\pi #1}}{4\pi #1}}
 
 \newcommand{\rot}{\vec{r}_{12}}
-\newcommand{\rotp}{\vec{r}_{12}\!\!'}
+\newcommand{\rotp}{\vec{r}_{12}\!\!\!'\;}
 
 \newcommand{\taudot}{\vec{\tau}_1\cdot\vec{\tau}_2}
+\newcommand{\taucrossthree}{\left[\vec{\tau}_1\times\vec{\tau}_2\right]_3}
 \newcommand{\sigmadot}{\vec{\sigma}_1\cdot\vec{\sigma}_2}
+\newcommand{\sigmatwo}{[\vec{\sigma}_1\otimes\vec{\sigma}_2]_2}
 
 \newcommand{\lvec}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
 
@@ -96,7 +98,7 @@ Department of Physics, University of California, Berkeley, California 94720, USA
              %  but any date may be explicitly specified
 
 \begin{abstract}
-We analytically reduce the chiral three-nucleon interaction at N$^2$LO to a density-dependent effective two-body potential by summing the third particle over the states of a spin-symmetric Fermi gas. Results are given for the potential in momentum space and in coordinate space. A local expansion of the coordinate space potential is also derived. We give estimates for the size of the density dependent corrections to the two-body forces and the non locality of the in-medium effective potential.
+We analytically reduce the chiral three-nucleon interaction at N$^2$LO to a density-dependent effective two-body potential by summing the third particle over the states of a spin-symmetric Fermi gas. Results are given for the potential in momentum space and in coordinate space. A local expansion of the coordinate space potential is also derived. We give estimates for the size of the density dependent corrections to the two-body forces and the nonlocality of the in-medium effective potential.
 \end{abstract}
 
 %\pacs{Valid PACS appear here}% PACS, the Physics and Astronomy
@@ -231,11 +233,11 @@ V_{12,\text{eff}}(\vec{r}_{12})=\frac{c_E m_\pi^6}{2F_\pi^4\Lambda_\chi}\:\frac{
 
 The three-body one pion exchange term (the middle diagram in Figure \ref{fig:3NF}) generates a richer effective interaction. The momentum dependence generates both a purely local interaction
 \begin{equation}\begin{split}
-V^{D}_{12,\text{eff}}(\rot)=&\frac{c_D g_Am_\pi^6}{8 F_\pi^4 \Lambda_\chi}\: \left[\rho_{I=0}\left(\taudot W^{\text{LR}}_{1PE}(\rot)  +3\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \right. \\
+V^{D}_{12,\text{eff}}(\rot)=&\frac{c_D g_Am_\pi^3}{8 F_\pi^4 \Lambda_\chi}\: \left[\rho_{I=0}\left(\taudot W^{\text{LR}}_{1PE}(\rot)  +3\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \right. \\
 &-\left. \rho_{I=1} \left(W^{\text{LR}}_{1PE}(\rot)+(1-2\sigmadot/3)\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \frac{\tau_3(1)+\tau_3(2)}{2} \right]
 \end{split}
 \end{equation}
-and a nonlocal potential arising from the exchange terms
+and a nonlocal potential arising from the exchange terms (DELTA FUNCTIONS HAVE DIMENSIONALITY!)
 \begin{equation}\begin{split}\label{eqn:1PENonlocal}
 V^{D}_{12,\text{eff}}(\rot,\rotp)=\frac{-c_D g_A m_\pi^6}{8 F_\pi^4 \Lambda_\chi}\: \left[ \delta^{(3)}(\rot)\left\{\frac{\hat{\rho}_{I=0}(r'_{12})}{2}\left(\taudot W^{\text{LR}}_{1PE}(\rotp)+\frac{3}{4\pi}\yukawadimless{r'_{12}}\right) \right.\right.& \\
 \left.\left.+\frac{\hat{\rho}_{I=1}(r'_{12})}{2}\frac{\tau_3(1)+\tau_3(2)}{2} \left( W^{\text{LR}}_{1PE}(\rotp)-\frac{1}{4\pi}\yukawadimless{r'_{12}}\right) \right\} + \rot \leftrightarrow \rotp \vphantom{\left(\yukawa{r}^2\right)} \right]\hspace{-.25cm}&
@@ -243,7 +245,7 @@ V^{D}_{12,\text{eff}}(\rot,\rotp)=\frac{-c_D g_A m_\pi^6}{8 F_\pi^4 \Lambda_\chi
 In order to highlight the physical meaning of these terms, we write a dimensionless version of the long range terms in the two-body one pion exchange potential as
 \begin{equation}\begin{split}
 W^{\text{LR}}_{1PE}(\vec{r})&=\frac{1}{12 \pi}\frac{e^{-m_\pi^2}}{m_\pi r}\left[\left(3\vec{\sigma}_1\cdot\hat{r}\:\vec{\sigma}_2\cdot\hat{r}-\sigmadot\right)\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\sigmadot\right] \\
-&=\frac{1}{12 \pi}\frac{e^{-m_\pi^2}}{m_\pi r}\left[3[\sigma_1\otimes\sigma_2]_2\cdot[\hat{r}\otimes\hat{r}]_2\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\sigmadot\right]
+&=\frac{1}{4 \pi}\frac{e^{-m_\pi^2}}{m_\pi r}\left[\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\frac{\sigmadot}{3}\right]
 \end{split}
 \end{equation}
 
@@ -254,6 +256,24 @@ The density dependence is now also mixed with spatial dependence, which we defin
 \end{equation}
 
 For all pieces of the N$^2$LO 3N interaction besides the purely short range contact $V_E$, nonlocal effective interactions like \eqref{eqn:1PENonlocal} are generated from summing over terms which are not diagonal in the spectator particle. Coordinate space potentials are generally nonlocal when there is a momentum dependence of the interaction. In this case, the $\Gamma$ terms with complicated momentum dependence in Section \ref{sec:momentum} are the source.
+
+From the 2PE term, a large number of unique terms are generated for the effective interaction. The $V_1$ piece again produces both a local part 
+\begin{multline}
+V^{1}_{12,\text{eff}}(\rot)=-c_1 m_\pi^3\left(\frac{g_A}{F_\pi^2}\right)^2 \rho_{I=0}\: \taudot\: \yukawadimless{r_{12}}\\
+ \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo (1+m_\pi r_{12})+(m_\pi r-2)\frac{\sigmadot}{3}\right)
+\end{multline}
+and a nonlocal part 
+\begin{multline}
+V^{1}_{12,\text{eff}}(\rot,\rotp)=c_1 m_\pi^6\left(\frac{g_A}{F_\pi^2}\right)^2 \left[\vphantom{\frac{1}{3}}\right. \\
+  \frac{4\pi}{3}\left(1+\frac{1}{m_\pi r_{12}}\right)\yukawadimless{r_{12}}\left(1+\frac{1}{m_\pi |r_{12}-r_{12}'|}\right)\yukawadimless{|r_{12}-r'_{12}|} \\
+   \times\left\{\left[\vphantom{x^{i}}
+   \hat{\rho}_{I=0}(\rot-\rotp) \taudot+\hat{\rho}_{I=1}(\rot-\rotp)\tau_3(1)\right]
+   \left(\vec{\sigma}_1\cdot Y_{1}(\hat{r}'_{12})\vec{\sigma}_2\cdot Y_{1}(\hat{r_{12}-r'_{12}})+\rot\leftrightarrow\rotp\right) \right.\\
+\left.+i\taucrossthree\hat{\rho}_{I=1}(\rot-\rotp)\left(\vec{\sigma}_1\cdot Y_{1}(\hat{r}'_{12})\vec{\sigma}_2\cdot Y_{1}(\hat{r_{12}-r'_{12}})-\rot\leftrightarrow\rotp\right)\right\} \\
++ \frac{4\pi}{3}\left(1+\frac{1}{m_\pi r_{12}}\right)\yukawadimless{r_{12}}\left(1+\frac{1}{m_\pi r'_{12}}\right)\yukawadimless{r'_{12}} \\
+\times \left[3\vphantom{x^{i^i}}\hat{\rho}_{I=0}(\rot-\rotp)-\hat{\rho}_{I=1}(\rot-\rotp)\tau_3(1)\right]\vec{\sigma}_1\cdot Y_{1}(\hat{r}_{12})\vec{\sigma}_1\cdot Y_{1}(\hat{r}'_{12})\left.\vphantom{\frac{1}{3}}\right].
+\end{multline}
+
 
 \subsection{A first order local expansion}
 
