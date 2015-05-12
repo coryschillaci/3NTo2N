@@ -284,6 +284,52 @@ The nonlocal parts can be systematically Taylor expanded in the coordinate $m_\p
 m_\pi(\vec{r}-\vec{r}\:')/2 \lesssim 
 \end{equation}
 
+\appendix
+
+\section{Fourier integrals}
+
+Similar to Novato \emph{et al} %\cite{LOVATO}
+, we introduce the following notation for the dimensionless radial functions $w(\alpha,\beta,\ell; m r)$, defined by
+
+\begin{align*}
+i^\ell \, Y_\ell(\hat{r}) \, w(\alpha,\beta,\ell; m r)  &= \frac{4 \pi}{m^{3+\alpha-2\beta} }  \int \frac{d^3 q}{(2\pi)^3} \frac{q^\alpha}{(q^2+m^2)^\beta} Y_\ell(\hat{q}) \, e^{i \mathbf{q} \cdot \mathbf{r}  },
+\end{align*}
+which implies that
+\begin{align*}
+w(\alpha,\beta,\ell; m r) = \frac{1}{m^{3+\alpha-2\beta} } \frac{2}{\pi} \int dq \, q^2 \, \frac{q^\alpha}{(q^2+m^2)^\beta} j_\ell(q r)
+\end{align*}
+with $z \equiv m r$. Below, we tabulate this integral for selected values of $\alpha, \beta, \ell$. The first function we recover, for the case of $(\alpha, \beta, \ell ) = (0,1,0)$, is nothing but a Yukawa potential. To further demonstrate the use of this integral, we now derive the familiar tensor force resulting from one pion exchange. This amplitude is related to the integral
+$$ V_\pi( \mathbf{r}) \propto  \int \frac{d^3 q } {(2 \pi)^3 } \frac{(\sigma^{(1)} \cdot \mathbf{q} ) (\sigma^{(2)} \cdot \mathbf{q} ) } {q^2+m_\pi^2} e^{i \mathbf{q} \cdot \mathbf{r} }. $$
+We can rewrite the numerator as
+$$ (\sigma^{(1)} \cdot \mathbf{q}) ( \sigma^{(2)} \cdot \mathbf{q} )= q^2 \left( [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot \bar{Y}_2(\hat{q}) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)}  \bar{Y}_0(\hat{q}) \right),$$
+which then gives
+$$ V_\pi( \mathbf{r}) \propto \left(\frac{m^3}{4 \pi}\right) \left\{ - [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot \bar{Y}_2(\hat{r}) w(2,1,2; z) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)} w(2,1,0; z ) \right\},  $$
+or, plugging in the $w$'s and noting that the tensor operator $S_{12}$ is conventionally defined
+$$ 3 [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot \bar{Y}_2(\hat{r}) \equiv S_{12}, $$
+we have
+$$ V_\pi( \mathbf{r}) \propto -\left(\frac{m^3}{12 \pi}\right) \left\{ \frac{e^{-z}}{z} \left[ S_{12}\left(1+\frac{3}{z}+ \frac{3}{z^2} \right) +  \sigma^{(1)} \cdot \sigma^{(2)} \right] - \frac{4\pi }{m^3}  \sigma^{(1)} \cdot \sigma^{(2)} \delta^3(\mathbf{r}) \right\}, $$
+which is the familiar result.
+\begin{table}
+\begin{center}
+\begin{tabular}{| c c c | c |}
+\hline
+$\alpha$ & $\beta$ & $\ell$ & $ w(\alpha,\beta,\ell; z)$ \\
+\hline
+0 & 1 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} $ \\
+2 & 1 & 0 & $ -\frac{\displaystyle e^{-z}}{\displaystyle z} + 4\pi \delta^3(\vec{r})/m^3 $ \\
+1 & 1 & 1 &  $\frac{\displaystyle e^{-z}}{\displaystyle z} (1 + \tfrac{1}{z})  $ \\
+2 & 1 & 2 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} (1+ \tfrac{3}{z} + \tfrac{3}{z^2} )$ \\
+2 & 2 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} (-\tfrac{z}{2} + 1 ) $ \\
+2 & 2 & 2 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} (\tfrac{z}{2} + \tfrac{1}{2} ) $ \\
+4 & 2 & 0 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} (\tfrac{z}{2} - 2 ) + 4 \pi \delta^3( \vec{r} ) / m^3 $ \\
+4 & 2 & 2 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} ( - \tfrac{z}{2} + \tfrac{1}{2} + \tfrac{3}{z} + \tfrac{3}{z^2} ) $ \\
+\hline
+\end{tabular}
+\end{center}
+\label{integralTable}
+\end{table}
+
+
 \bibliography{References}
 \end{document}
 %
