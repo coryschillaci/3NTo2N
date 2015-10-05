@@ -297,18 +297,23 @@ which implies that
 \begin{align}\label{eq:wDef}
 w(\alpha,\beta,\ell; z) =  \frac{2}{\pi} \int dk \, k^2 \, \frac{k^\alpha}{(1+k^2)^\beta} j_\ell(k z)
 \end{align}
-with $\vec{z} \equiv m \vec{r}$ and $k$ both dimensionless. Below, we tabulate this integral for selected values of $\alpha, \beta, \ell$. The first function we recover, for the case of $(\alpha, \beta, \ell ) = (0,1,0)$, is nothing but a Yukawa potential. To further demonstrate the use of this integral, we now derive the familiar tensor force resulting from one pion exchange. This amplitude is related to the integral
+with $\vec{z} \equiv m \vec{r}$ and $k$ both dimensionless. Below, we tabulate this integral for selected values of $\alpha, \beta, \ell$. The first function we recover, for the case of $(\alpha, \beta, \ell ) = (0,1,0)$, is nothing but a Yukawa potential. 
+
+To further demonstrate the use of this integral, we now derive the familiar tensor force resulting from one pion exchange. This amplitude is related to the integral
 \begin{equation} 
-V_\pi( \mathbf{r}) \propto  \int \frac{d^3 q } {(2 \pi)^3 } \frac{(\sigma^{(1)} \cdot \mathbf{q} ) (\sigma^{(2)} \cdot \mathbf{q} ) } {q^2+m_\pi^2} e^{i \mathbf{q} \cdot \mathbf{r} }. 
+V_\pi( \mathbf{r}) =  -\frac{g_A^2 }{4 F_\pi^2} \:\taudot \int \frac{d^3 q } {(2 \pi)^3 } \frac{(\sigma^{(1)} \cdot \mathbf{q} ) (\sigma^{(2)} \cdot \mathbf{q} ) } {q^2+m_\pi^2} e^{i \mathbf{q} \cdot \mathbf{r} }. 
 \end{equation}
-We can rewrite the numerator as
-\begin{equation} (\sigma^{(1)} \cdot \mathbf{q}) ( \sigma^{(2)} \cdot \mathbf{q} )= q^2 \left( \sqrt{\frac{15}{8\pi}} [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot Y_2(\hat{q}) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)}  Y_0(\hat{q}) \right),\end{equation}
+We can rewrite the numerator in the integral as
+\begin{equation} (\sigma^{(1)} \cdot \mathbf{q}) ( \sigma^{(2)} \cdot \mathbf{q} )= q^2 \left( - \sqrt{\frac{15}{8\pi}} [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot Y_2(\hat{q}) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)}  Y_0(\hat{q}) \right),\end{equation}
 which then gives
-\begin{equation} V_\pi( \mathbf{r}) \propto \left(\frac{m^3}{4 \pi}\right) \left\{ -  \sqrt{\frac{15}{8\pi}} [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot Y_2(\hat{r}) w(2,1,2; z) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)} w(2,1,0; z ) \right\},  \end{equation}
+\begin{equation} 
+V_\pi( \mathbf{r}) = - \frac{g_A^2 }{4 F_\pi^2} \taudot \left(\frac{m_\pi^3}{4 \pi}\right) \left\{ - \sqrt{\frac{15}{8\pi}} [\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) w(2,1,2; m_\pi r) + \frac{1}{3} \sigma_1 \cdot \sigma_2 w(2,1,0; m_\pi r ) \right\},  \end{equation}
 or, plugging in explicit values for the $w$'s from Table \ref{table:wTable} and recalling that the tensor operator $S_{12}$ is conventionally defined
-\begin{equation} 3 [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot \bar{Y}_2(\hat{r}) \equiv S_{12}, \end{equation}
+\begin{equation}
+S_{12} \equiv   3\vec{\sigma}_1\cdot \hat{r}\vec{\sigma}_2\cdot \hat{r} -\sigmadot = 3\:\sqrt{\frac{15}{8\pi}} \:[\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) , 
+\end{equation}
 we have
-\begin{equation} V_\pi( \mathbf{r}) \propto -\left(\frac{m^3}{12 \pi}\right) \left\{ \frac{e^{-z}}{z} \left[ S_{12}\left(1+\frac{3}{z}+ \frac{3}{z^2} \right) +  \sigma^{(1)} \cdot \sigma^{(2)} \right] - \frac{4\pi }{m^3}  \sigma^{(1)} \cdot \sigma^{(2)} \delta^3(\mathbf{r}) \right\}, 
+\begin{equation} V_\pi( \mathbf{r})= \frac{g_A^2 }{4 F_\pi^2}  \left(\frac{m_\pi^3}{12 \pi}\right) \left\{ \frac{e^{-m_\pi r}}{m_\pi r} \left[ S_{12}\left(1+\frac{3}{m_\pi r}+ \frac{3}{m_\pi^2 r^2} \right) +  \sigma_1 \cdot \sigma_2 \right] - 4\pi  \sigma_1 \cdot \sigma_2 \delta^3(m_\pi \mathbf{r}) \right\}, 
 \end{equation}
 which is the familiar result.
 \begin{table}
