@@ -172,7 +172,7 @@ As they will arise repeatedly in our calculations, we define dimensionless isosc
 \caption{\label{fig:3NF}Diagrams for the 3N interactions at NNLO.}
 \end{figure}
 
-There are three terms in the chiral potential at NNLO \cite{PhysRevC.66.064001}. 
+There are three three-body terms in the chiral potential at NNLO \cite{PhysRevC.66.064001}. 
 \begin{align}
 V_E&=\frac{1}{2}\frac{c_E }{F_\pi^4\Lambda_\chi}\sum_{i\neq j} \vec{\tau}_i\cdot\vec{\tau}_j \label{eq:V_E} \\
 V_D&=-\frac{ g_A}{8F_\pi^2}\frac{c_D}{\Lambda_\chi F_\pi^2}\sum_{i\neq j \neq k} \frac{ \vec{\sigma}_i\cdot\vec{q}_j\:\vec{\sigma}_j\cdot\vec{q}_j }{q^2_j+m_\pi^2} \vec{\tau}_i\cdot\vec{\tau}_j \label{eq:V_D}\\
@@ -286,7 +286,7 @@ m_\pi(\vec{r}-\vec{r}\:')/2 \lesssim
 
 \appendix
 
-\section{Fourier integrals}
+\section{\label{app:wNotation}Fourier integrals}
 
 Similar to \cite{PhysRevC.85.024003}, we introduce the following notation for the dimensionless radial functions $w(\alpha,\beta,\ell; m r)$, defined by
 
@@ -304,13 +304,13 @@ To further demonstrate the use of this integral, we now derive the familiar tens
 V_\pi( \mathbf{r}) =  -\frac{g_A^2 }{4 F_\pi^2} \:\taudot \int \frac{d^3 q } {(2 \pi)^3 } \frac{(\sigma^{(1)} \cdot \mathbf{q} ) (\sigma^{(2)} \cdot \mathbf{q} ) } {q^2+m_\pi^2} e^{i \mathbf{q} \cdot \mathbf{r} }. 
 \end{equation}
 We can rewrite the numerator in the integral as
-\begin{equation} (\sigma^{(1)} \cdot \mathbf{q}) ( \sigma^{(2)} \cdot \mathbf{q} )= q^2 \left( - \sqrt{\frac{15}{8\pi}} [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot Y_2(\hat{q}) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)}  Y_0(\hat{q}) \right),\end{equation}
+\begin{equation} (\sigma^{(1)} \cdot \mathbf{q}) ( \sigma^{(2)} \cdot \mathbf{q} )= q^2 \left(\sqrt{\frac{8\pi}{15}} [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot Y_2(\hat{q}) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)}  Y_0(\hat{q}) \right),\end{equation}
 which then gives
 \begin{equation} 
-V_\pi( \mathbf{r}) = - \frac{g_A^2 }{4 F_\pi^2} \taudot \left(\frac{m_\pi^3}{4 \pi}\right) \left\{ - \sqrt{\frac{15}{8\pi}} [\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) w(2,1,2; m_\pi r) + \frac{1}{3} \sigma_1 \cdot \sigma_2 w(2,1,0; m_\pi r ) \right\},  \end{equation}
+V_\pi( \mathbf{r}) = - \frac{g_A^2 }{4 F_\pi^2} \taudot \left(\frac{m_\pi^3}{4 \pi}\right) \left\{ - \sqrt{\frac{8\pi}{15}} [\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) w(2,1,2; m_\pi r) + \frac{1}{3} \sigma_1 \cdot \sigma_2 w(2,1,0; m_\pi r ) \right\},  \end{equation}
 or, plugging in explicit values for the $w$'s from Table \ref{table:wTable} and recalling that the tensor operator $S_{12}$ is conventionally defined
 \begin{equation}
-S_{12} \equiv   3\vec{\sigma}_1\cdot \hat{r}\vec{\sigma}_2\cdot \hat{r} -\sigmadot = 3\:\sqrt{\frac{15}{8\pi}} \:[\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) , 
+S_{12} \equiv   3\vec{\sigma}_1\cdot \hat{r}\vec{\sigma}_2\cdot \hat{r} -\sigmadot = 3\:\sqrt{\frac{8\pi}{15}} \:[\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) , 
 \end{equation}
 we have
 \begin{equation} V_\pi( \mathbf{r})= \frac{g_A^2 }{4 F_\pi^2}  \left(\frac{m_\pi^3}{12 \pi}\right) \left\{ \frac{e^{-m_\pi r}}{m_\pi r} \left[ S_{12}\left(1+\frac{3}{m_\pi r}+ \frac{3}{m_\pi^2 r^2} \right) +  \sigma_1 \cdot \sigma_2 \right] - 4\pi  \sigma_1 \cdot \sigma_2 \delta^3(m_\pi \mathbf{r}) \right\}, 
