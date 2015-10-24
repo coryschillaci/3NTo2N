@@ -69,20 +69,29 @@
 \newcommand{\yukawanoabs}[1]{\frac{e^{-m_\pi #1}}{4\pi #1}}
 
 \newcommand{\rot}{\vec{r}_{12}}
-\newcommand{\rotp}{\vec{r}_{12}\!\!\!'\;}
+\newcommand{\rotp}{\vec{r}_{12}\!\!\!'\,\,}
 
-\newcommand{\rotpr}{r_{12}\!\!\!\!'\;}
-\newcommand{\rotphat}{\hat{r}_{12}\!\!\!\!'\;}
+\newcommand{\rotpr}{r_{12}\!\!\!\!'\,\,\,}
+\newcommand{\rotphat}{\hat{r}_{12}\!\!\!\!'\,\,\,}
 
 \newcommand{\taudot}{\vec{\tau}_1\cdot\vec{\tau}_2}
 \newcommand{\taucrossthree}{\left[\vec{\tau}_1\times\vec{\tau}_2\right]_3}
+\newcommand{\tauplusthree}{\frac{\tau_1^3+\tau_2^3}{2}}
+\newcommand{\tauminusthree}{\frac{\tau_1^3+\tau_2^3}{2}}
+
 \newcommand{\sigmadot}{\vec{\sigma}_1\cdot\vec{\sigma}_2}
+\newcommand{\sigmaplus}{\vec{\sigma}_1+\vec{\sigma}_2}
+\newcommand{\sigmaminus}{\vec{\sigma}_1-\vec{\sigma}_2}
 \newcommand{\sigmatwo}{[\vec{\sigma}_1\otimes\vec{\sigma}_2]_2}
+\newcommand{\sigmaone}{[\vec{\sigma}_1\otimes\vec{\sigma}_2]_1}
 \newcommand{\sigmacross}{\vec{\sigma}_1\times\vec{\sigma}_2}
 
 \newcommand{\fracphantom}{\vphantom{\frac{1}{1}}}
 
 \newcommand{\lvec}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
+
+%\newcommand{\w}[4]{w(#1,#2,#3;#4)}
+\newcommand{\w}[4]{w_{#1,#2,#3}(#4)}
 
 \begin{document}
 
@@ -93,8 +102,8 @@
 
 \author{Cory D. Schillaci}
 \email{schillaci@berkeley.edu}
-\author{Mark C. Strother}
-\email{mcstro@berkeley.edu}
+%\author{Mark C. Strother}
+%\email{mcstro@berkeley.edu}
  %\altaffiliation[Also at ]{Physics Department, XYZ University.}%Lines break automatically or can be forced with \\
 \author{Wick C. Haxton}%
 \email{haxton@berkeley.edu}
@@ -125,9 +134,9 @@ However, in modern numerical approaches such as the ab into no core shell model,
 
 Because we have a highly accurate but computationally intensive theory, this suggests an effective theory approach. Here, we analytically reduce the chiral three-body interaction to an average two-body interaction which depends on the local nucleon density. This approach has been successfuly applied in the reduction of two-body interactions to single particle potentials \cite{PhysRev.133.B329,AdelbergerHaxton}.
 
-Recent efforts have found the effective potential in cases with specific isospin constraints, either for pure neutron matter \cite{PhysRevC.82.014314} or for isospin symmetric nuclei \cite{PhysRevC.81.024002}. These results have been used in, for example, calculations of nuclear pairing energies using nuclear energy density functionals \cite{0954-3899-39-1-015108}. An alternate approach to deriving density-dependent effective potential using correlated basis functions was also proposed in \cite{PhysRevC.83.054003}.
+Recent efforts have found the effective potential in cases with specific isospin constraints, either for pure neutron matter \cite{PhysRevC.82.014314}, for isospin symmetric nuclei \cite{PhysRevC.81.024002} and in general for asymmetric isospins within the Hartree-Fock framework \cite{Drischler:2015eba}. These results have been used in, for example, calculations of nuclear pairing energies using nuclear energy density functionals \cite{0954-3899-39-1-015108}. An alternate approach to deriving density-dependent effective potential using correlated basis functions was also proposed in \cite{PhysRevC.83.054003}.
 
-Here, we derive a fully general result valid for arbitrary isospin composition and without neglecting any contributions. Furthermore, we perform an expansion to give a local approximation to the full effective potential.
+Here, we derive and state a fully general result valid for arbitrary isospin composition and without neglecting any contributions. Expressions for the result are given in both momentum and coordinate space. Furthermore, we perform an expansion to give a local approximation to the full effective potential.
 
 \section{Averaging over a Fermi Gas core}
 
@@ -206,10 +215,10 @@ These represent a three-body contact potential, a one-pion exchange plus contact
  % What is best way to notate \tau_3(1) type operators?
  The effective interactions for \eqref{eq:V_E} and \eqref{eq:V_D} are given in momentum space by
  \begin{align}
- \veff^E=-&\frac{3c_Em_\pi^3}{2F_\pi^4 \Lambda_\chi}\left(\rhozero-\rhoone\frac{\tau_1^3+\tau_2^3}{2}\right)\\
+ \veff^E=-&\frac{3c_Em_\pi^3}{2F_\pi^4 \Lambda_\chi}\left(\rhozero-\rhoone\tauplusthree\right)\\
  \begin{split}
- \veff^D=-&\frac{c_Dg_A m_\pi^3}{8 F_\pi^4\Lambda_\chi}\left[\rhozero\taudot \frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2}  - \rhoone \frac{\tau_1^3+\tau_2^3}{2}\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2} \right. \\
-&\left. \vphantom{\frac{1}{1}}+ (3-\taudot\sigmadot) \left(\Gamma_{I=0}(k)+\Gamma_{I=0}(k')\right)  -(1+\sigmadot)\frac{\tau_1^3+\tau_2^3}{2} \left(\Gamma_{I=1}(k) + \Gamma_{I=1}(k')\right) \right]
+ \veff^D=-&\frac{c_Dg_A m_\pi^3}{8 F_\pi^4\Lambda_\chi}\left[\rhozero\taudot \frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2}  - \rhoone \tauplusthree\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2} \right. \\
+&\left. \vphantom{\frac{1}{1}}+ (3-\taudot\sigmadot) \left(\Gamma_{I=0}(k)+\Gamma_{I=0}(k')\right)  -(1+\sigmadot)\tauplusthree \left(\Gamma_{I=1}(k) + \Gamma_{I=1}(k')\right) \right]
  \end{split} 
  \end{align}
 Evaluating the isospin  of these vanish for systems built purely of neutrons or protons. The functions $\Gamma_{I=0,1}(k)=\Gamma_{P}(k)\pm\Gamma_{N}(k)$ are momentum dependent analogues of the densities \eqref{eq:densities} which arise from integrating over the spectator momentum,
@@ -228,11 +237,11 @@ All variables appear in the dimensionless combinations $\tilde{m}_\pi=m_\pi/k_F^
  
 \section{The effective potential in coordinate space}
 
-By evaluating the Fourier transforms of the momentum space effective potential, we obtain the potential in coordinate space. 
+By evaluating the Fourier transforms of the momentum space effective potential, we obtain the potential in coordinate space. Each term in the full potential contains couplings of varying numbers of vector operators operating on spatial and spin quantum numbers. Throughout, we give the potentials by first coupling any coordinate operators with one another (e.g. forming the spherical harmonics $Y_l(\hat{r}_{12})$ and $Y_l(\rotphat)$), then coupling these operators together before finally coupling with the spin operators.
 
 The simplest of the three-body interactions at N$^2$LO is the contact term. Evaluation of the diagram and summation over the core particles gives the two-body effective potential,
 \begin{equation}
-V_{12,\text{eff}}(\vec{r}_{12})=\frac{c_E m_\pi^6}{2F_\pi^4\Lambda_\chi}\:\frac{3\delta^{(3)}(\vec{r}_{12})}{m_\pi^3}\left[-\rho_{I=0}+ \rho_{I=1}\frac{\tau_3(1)+\tau_3(2)}{2} \right]
+V_{12,\text{eff}}(\vec{r}_{12})=\frac{c_E m_\pi^6}{2F_\pi^4\Lambda_\chi}\:\frac{3\delta^{(3)}(\vec{r}_{12})}{m_\pi^3}\left[-\rho_{I=0}+ \rho_{I=1}\tauplusthree \right]
 \end{equation}
 %where the dimensionless isoscalar and isovector spectator nucleon densities are given by,
 %\begin{equation}\label{eq:densities}
@@ -268,21 +277,54 @@ For all pieces of the N$^2$LO 3N interaction besides the purely short range cont
 From the 2PE term, a large number of unique terms are generated for the effective interaction. The $V_1$ piece again produces both a local part 
 \begin{multline}
 V^{1}_{12,\text{eff}}(\rot)=-\frac{c_1 m_\pi^6}{8\pi}\left(\frac{g_A}{F_\pi^2}\right)^2 \rho_{I=0}\taudot\:\\
- \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo w(2,2,2;m_\pi r) +\frac{\sigmadot}{3}  w(2,2,0;m_\pi r) \right)
+ \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo \w{2}{2}{2}{m_\pi r} +\frac{\sigmadot}{3}  \w{2}{2}{0}{m_\pi r} \right)
 \end{multline}
 and a nonlocal part 
 
 \begin{multline}
 V^{1}_{12,\text{eff}}(\rot,\rotp)=-\frac{c_1 m_\pi^9}{48\pi} \left(\frac{g_A}{F_\pi^2}\right)^2 
 \left\{ \vphantom{\frac{1}{3}} \right. \\
-\left[ \taudot \: \rhohat{0}{|\rot-\rotp|} + \tau_3(1) \rhohat{1}{|\rot-\rotp|} \right] w(1,1,1, m_\pi r_{12})w(1,1,1, m_\pi | \rot-\rotp | )\\
+\left[ \taudot \: \rhohat{0}{|\rot-\rotp|} + \tau_3(1) \rhohat{1}{|\rot-\rotp|} \right] \w{1}{1}{1}{m_\pi r_{12}} \w{1}{1}{1}{m_\pi | \rot-\rotp | }\\
 \times \left( \sigmatwo \cdot [ Y_1 (\hat{r}_{12}) \otimes Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2
  +\frac{1}{2}(\sigmacross)\cdot (Y_1 (\hat{r}_{12}) \times Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ) \right. \\
 \left.+\frac{\sigmadot}{3} Y_1 (\hat{r}_{12}) \cdot Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)
 +\rot\leftrightarrow\rotp\right) \\
-+\left[3\rhohat{0}{|\rot-\rotp|}-\tau_3(1)\rhohat{1}{|\rot-\rotp|}\right]w(1,1,1, m_\pi r_{12})w(1,1,1, m_\pi \rotpr) \\
++\left[3\rhohat{0}{|\rot-\rotp|}-\tau_3(1)\rhohat{1}{|\rot-\rotp|}\right] \w{1}{1}{1}{m_\pi r_{12}} \w{1}{1}{1}{m_\pi \rotpr} \\
 \times\left.\left(i\vec{\sigma}_1 \cdot (Y_1 (\hat{r}_{12}) \times Y_1(\rotphat)) + Y_1 (\hat{r}_{12}) \cdot Y_1(\rotphat) \fracphantom \right)
 \right\}
+\end{multline}
+
+The $V_4$ term generates only a nonlocal term because the terms diagonal in the spectator particle all sum to zero. The nonlocal terms are
+
+\begin{multline}
+V^{4}_{12,\text{eff}}(\rot,\rotp) = \frac{c_4}{4}\frac{g_A^2}{F_\pi^2}\frac{m_\pi^9}{16\pi^2}\left\{ \fracphantom \right. \\
+\rhohat{0}{|\rot-\rotp|}\taudot\left( -\frac{4}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2(\rotphat)\w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{0}{m_\pi |r_{12}- \rotpr|} \right. \\
++\frac{2}{9}\sigmadot\; \w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{0}{m_\pi |r_{12}- \rotpr|} \\
++\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot \left[ Y_2(\rotphat)\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \right]_2 \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
+-\frac{1}{3}\frac{8\pi}{15}\sigmadot \; Y_2(\rotphat)\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)\w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
+\left.-\; \rot \leftrightarrow \rotp \fracphantom\right) \\
+\rhohat{0}{|\rot-\rotp|}\taudot \left( -\sqrt{\frac{5}{2}} \frac{8\pi}{15} \frac{\sigmaplus}{2}\cdot\left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_1 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr}\right. \\
+-\frac{\sqrt{21}}{3}\frac{8\pi}{15}\sigmatwo \cdot \left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_2 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \\
+-\frac{1}{3}\frac{8\pi}{15}\sigmadot\; Y_2(\hat{r}_{12}) \cdot Y_2(\rotphat)\w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \\
++\frac{2}{9}\sigmadot \;\w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{0}{m_\pi \rotpr} \\
++\frac{1}{3}\sqrt{\frac{8\pi}{15}} \sigmatwo \cdot Y_2(\hat{r}_{12}) \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{0}{m_\pi \rotpr} \\
++\frac{1}{3}\sqrt{\frac{8\pi}{15}} \sigmatwo \cdot Y_2(\rotphat) \w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \left.\fracphantom\right)\\
++\rhohat{1}{|\rot-\rotp|}\tauplusthree \left(\frac{4}{3} \sqrt{\frac{8\pi}{15}} \sigmatwo \cdot Y_2(\rotpr) \w{2}{1}{0}{m_\pi \rotphat} \w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \right. \\
+-\frac{2}{9} \sigmadot \w{2}{1}{0}{m_\pi \rotphat} \w{2}{1}{0}{m_\pi |r_{12}- \rotpr|} \\
+-\frac{\sqrt{7}}{12}\frac{8\pi}{15} \sigmatwo \cdot \left[ Y_2(\rotphat)\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \right]_2 \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
++\frac{1}{3}\frac{8\pi}{15} \sigmadot \; Y_2(\rotphat)\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
++\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)\w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|}\left.-\; \rot \leftrightarrow \rotp \fracphantom\right) 
+\displaybreak[4]\\
+%
+%
+\rhohat{1}{|\rot-\rotp|}\tauplusthree \left( \frac{\sqrt{21}}{3}\frac{8\pi}{15}\sigmatwo \cdot \left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_2 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \right. \\
++\frac{1}{3}\frac{8\pi}{15}\sigmadot\; Y_2(\hat{r}_{12}) \cdot Y_2(\rotphat)\w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \\
+-\frac{2}{9}\sigmadot \;\w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{0}{m_\pi \rotpr} \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}} \sigmatwo \cdot Y_2(\hat{r}_{12}) \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{0}{m_\pi \rotpr} \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}} \sigmatwo \cdot Y_2(\rotphat) \w{2}{1}{0}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \left.\fracphantom\right)\\
+\rhohat{1}{|\rot-\rotp|}\tauminusthree \left( \frac{\sqrt{5}}{2} \frac{8\pi}{15} \sigmaone \cdot \left[ Y_2(\hat{r}_{12}) \otimes Y_2(\rotphat)\right]_1 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} 
+\right.
 \end{multline}
 
 
@@ -298,7 +340,7 @@ V^{1}_{12,\text{eff}}(\rot,\rotp)=-\frac{c_1 m_\pi^9}{48\pi} \left(\frac{g_A}{F_
 %\end{multline}
 
 
-\subsection{A first order local expansion}
+\section{A first order local expansion}
 
 Although nonlocality is a common feature of nuclear potentials \cite{PhysRevC.53.R1483}, working with local potentials is typically simpler and less computationally expensive. In light of this, we develop here a local approximation to the full density-dependent effective interaction.
 
@@ -311,14 +353,14 @@ m_\pi(\vec{r}-\vec{r}\:')/2 \lesssim
 
 \section{\label{app:wNotation}Fourier integrals}
 
-Similar to \cite{PhysRevC.85.024003}, we introduce the following notation for the dimensionless radial functions $w(\alpha,\beta,\ell; m r)$, defined by
+Similar to \cite{PhysRevC.85.024003}, we introduce the following notation for the dimensionless radial functions $\w{\alpha}{\beta}{\ell}{ m r }$, defined by
 
 \begin{align}
-i^\ell \, Y_\ell(\hat{r}) \, w(\alpha,\beta,\ell; m r)  &= \frac{4 \pi}{m^{3+\alpha-2\beta} }  \int \frac{d^3 q}{(2\pi)^3} \frac{q^\alpha}{(q^2+m^2)^\beta} Y_\ell(\hat{q}) \, e^{i \mathbf{q} \cdot \mathbf{r}  },
+i^\ell \, Y_\ell(\hat{r}) \, \w{\alpha}{\beta}{\ell}{ m r}  &= \frac{4 \pi}{m^{3+\alpha-2\beta} }  \int \frac{d^3 q}{(2\pi)^3} \frac{q^\alpha}{(q^2+m^2)^\beta} Y_\ell(\hat{q}) \, e^{i \mathbf{q} \cdot \mathbf{r}  },
 \end{align}
 which implies that
 \begin{align}\label{eq:wDef}
-w(\alpha,\beta,\ell; z) =  \frac{2}{\pi} \int dk \, k^2 \, \frac{k^\alpha}{(1+k^2)^\beta} j_\ell(k z)
+\w{\alpha}{\beta}{\ell}{z} =  \frac{2}{\pi} \int dk \, k^2 \, \frac{k^\alpha}{(1+k^2)^\beta} j_\ell(k z)
 \end{align}
 with $\vec{z} \equiv m \vec{r}$ and $k$ both dimensionless. Below, we tabulate this integral for selected values of $\alpha, \beta, \ell$. The first function we recover, for the case of $(\alpha, \beta, \ell ) = (0,1,0)$, is nothing but a Yukawa potential. 
 
@@ -330,7 +372,7 @@ We can rewrite the numerator in the integral as
 \begin{equation} (\sigma^{(1)} \cdot \mathbf{q}) ( \sigma^{(2)} \cdot \mathbf{q} )= q^2 \left(\sqrt{\frac{8\pi}{15}} [\sigma^{(1)} \otimes \sigma^{(2)}]_2 \cdot Y_2(\hat{q}) + \tfrac{1}{3} \sigma^{(1)} \cdot \sigma^{(2)}  Y_0(\hat{q}) \right),\end{equation}
 which then gives
 \begin{equation} 
-V_\pi( \mathbf{r}) = - \frac{g_A^2 }{4 F_\pi^2} \taudot \left(\frac{m_\pi^3}{4 \pi}\right) \left\{ - \sqrt{\frac{8\pi}{15}} [\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) w(2,1,2; m_\pi r) + \frac{1}{3} \sigma_1 \cdot \sigma_2 w(2,1,0; m_\pi r ) \right\},  \end{equation}
+V_\pi( \mathbf{r}) = - \frac{g_A^2 }{4 F_\pi^2} \taudot \left(\frac{m_\pi^3}{4 \pi}\right) \left\{ - \sqrt{\frac{8\pi}{15}} [\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) \w{2}{1}{2}{m_\pi r} + \frac{1}{3} \sigma_1 \cdot \sigma_2 \w{2}{1}{0}{m_\pi r } \right\},  \end{equation}
 or, plugging in explicit values for the $w$'s from Table \ref{table:wTable} and recalling that the tensor operator $S_{12}$ is conventionally defined
 \begin{equation}
 S_{12} \equiv   3\vec{\sigma}_1\cdot \hat{r}\vec{\sigma}_2\cdot \hat{r} -\sigmadot = 3\:\sqrt{\frac{8\pi}{15}} \:[\sigma_1 \otimes \sigma_2]_2 \cdot Y_2(\hat{r}) , 
@@ -343,7 +385,7 @@ which is the familiar result.
 \begin{center}
 \begin{tabular}{| c c c | c |}
 \hline
-$\alpha$ & $\beta$ & $\ell$ & $ w(\alpha,\beta,\ell; z)$ \\
+$\alpha$ & $\beta$ & $\ell$ & $ \w{\alpha}{\beta}{\ell}{z}$ \\
 \hline
 0 & 0 & 0 & $ 4\pi \delta^{(3)}(\vec{z}) $ \\
 0 & 1 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} $ \\
@@ -357,7 +399,7 @@ $\alpha$ & $\beta$ & $\ell$ & $ w(\alpha,\beta,\ell; z)$ \\
 \hline
 \end{tabular}
 \end{center}
-\caption{\label{table:wTable} Table of selected values for $w(\alpha,\beta,\ell; z)$ found by integrating equation \eqref{eq:wDef}.}
+\caption{\label{table:wTable} Table of selected values for $\w{\alpha}{\beta}{\ell}{z}$ found by integrating equation \eqref{eq:wDef}.}
 \end{table}
 
 
