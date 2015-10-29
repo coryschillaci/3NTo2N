@@ -241,28 +241,32 @@ By evaluating the Fourier transforms of the momentum space effective potential, 
 
 The simplest of the three-body interactions at N$^2$LO is the contact term. Evaluation of the diagram and summation over the core particles gives the two-body effective potential,
 \begin{equation}
-V_{12,\text{eff}}(\vec{r}_{12})=\frac{c_E m_\pi^6}{2F_\pi^4\Lambda_\chi}\:\frac{3\delta^{(3)}(\vec{r}_{12})}{m_\pi^3}\left[-\rho_{I=0}+ \rho_{I=1}\tauplusthree \right]
+V_{12,\text{eff}}(\vec{r}_{12})=\frac{c_E }{2F_\pi^4\Lambda_\chi}\frac{m_\pi^6}{4\pi}\:3\w{0}{0}{0}{m_\pi r_{12}}\left[-\rho_{I=0}+ \rho_{I=1}\tauplusthree \right]
 \end{equation}
+which is spin-independent.
 %where the dimensionless isoscalar and isovector spectator nucleon densities are given by,
 %\begin{equation}\label{eq:densities}
 %\rho_{I=0,1}=\frac{\rho_P\pm\rho_N}{m_\pi^3}
 %\end{equation}
 
 The three-body one pion exchange term (the middle diagram in Figure \ref{fig:3NF}) generates a richer effective interaction. The momentum dependence generates both a purely local interaction
+\begin{multline}
+V^{D}_{12,\text{eff}}(\rot)=
+%&\frac{c_D g_Am_\pi^6}{8 F_\pi^4 \Lambda_\chi}\: \left[\rho_{I=0}\left(\taudot W^{\text{LR}}_{1PE}(\rot)  +3\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \right. \\
+%&-\left. \rho_{I=1} \left(W^{\text{LR}}_{1PE}(\rot)+(1-2\sigmadot/3)\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \frac{\tau_3(1)+\tau_3(2)}{2} \right]
+\frac{c_D g_A}{8 F_\pi^4 \Lambda_\chi} \frac{m_\pi^6}{4\pi}\: \left[\rho_{I=0}\left(\fracphantom\taudot\; W^{\text{LR}}_{1PE}(\rot)  +3\;\w{0}{0}{0}{m_\pi r}\right) \right. \\
+-\left. \rho_{I=1}\;\tauplusthree \;\left(\fracphantom W^{\text{LR}}_{1PE}(\rot)+(1-2\sigmadot/3)\;\w{0}{0}{0}{m_\pi r}\right) \right]
+\end{multline}
+and a nonlocal potential arising from the exchange terms 
+\begin{multline}\label{eq:1PENonlocal}
+V^{D}_{12,\text{eff}}(\rot,\rotp)=\frac{-c_D g_A }{8 F_\pi^4 \Lambda_\chi} \frac{m_\pi^6}{32\pi^2}\:  \left[ \w{0}{0}{0}{m_\pi r_{12}} \left\{\fracphantom \rhohat{0}{r_{12}}\left(\taudot W^{\text{LR}}_{1PE}(\rotp)+3\:\w{0}{1}{0}{m_\pi \rotpr}\right) \right.\right. \\
+\left.\left.+\hat{\rho}_{I=1}(r'_{12}) \tauplusthree \left( W^{\text{LR}}_{1PE}(\rotp)-\w{0}{1}{0}{m_\pi \rotpr}\right) \right\} + \rot \leftrightarrow \rotp \vphantom{\left(\yukawa{r}^2\right)} \right]
+\end{multline}
+In order to highlight the physical meaning of this expression, we have written part of this result using a dimensionless scalar function proportional to the long range terms in the two-body one pion exchange potential, defined as
 \begin{equation}\begin{split}
-V^{D}_{12,\text{eff}}(\rot)=&\frac{c_D g_Am_\pi^6}{8 F_\pi^4 \Lambda_\chi}\: \left[\rho_{I=0}\left(\taudot W^{\text{LR}}_{1PE}(\rot)  +3\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \right. \\
-&-\left. \rho_{I=1} \left(W^{\text{LR}}_{1PE}(\rot)+(1-2\sigmadot/3)\frac{\delta^{(3)}(\rot)}{m_\pi^3}\right) \frac{\tau_3(1)+\tau_3(2)}{2} \right]
-\end{split}
-\end{equation}
-and a nonlocal potential arising from the exchange terms (DELTA FUNCTIONS HAVE DIMENSIONALITY!)
-\begin{equation}\begin{split}\label{eq:1PENonlocal}
-V^{D}_{12,\text{eff}}(\rot,\rotp)=\frac{-c_D g_A m_\pi^6}{8 F_\pi^4 \Lambda_\chi}\: \left[ \delta^{(3)}(\rot)\left\{\frac{\hat{\rho}_{I=0}(r'_{12})}{2}\left(\taudot W^{\text{LR}}_{1PE}(\rotp)+\frac{3}{4\pi}\yukawadimless{r'_{12}}\right) \right.\right.& \\
-\left.\left.+\frac{\hat{\rho}_{I=1}(r'_{12})}{2}\frac{\tau_3(1)+\tau_3(2)}{2} \left( W^{\text{LR}}_{1PE}(\rotp)-\frac{1}{4\pi}\yukawadimless{r'_{12}}\right) \right\} + \rot \leftrightarrow \rotp \vphantom{\left(\yukawa{r}^2\right)} \right]\hspace{-.25cm}&
-\end{split}\end{equation}
-In order to highlight the physical meaning of these terms, we write a dimensionless version of the long range terms in the two-body one pion exchange potential as
-\begin{equation}\begin{split}
-W^{\text{LR}}_{1PE}(\vec{r})&=\frac{1}{12 \pi}\frac{e^{-m_\pi r}}{m_\pi r}\left[\left(3\vec{\sigma}_1\cdot\hat{r}\:\vec{\sigma}_2\cdot\hat{r}-\sigmadot\right)\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\sigmadot\right] \\
-&=\frac{1}{4 \pi}\frac{e^{-m_\pi r}}{m_\pi r}\left[\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\frac{\sigmadot}{3}\right]
+W^{\text{LR}}_{1PE}(\vec{r})&=\frac{e^{-m_\pi r}}{m_\pi r}\left[\left(\vec{\sigma}_1\cdot\hat{r}\:\vec{\sigma}_2\cdot\hat{r}-\sigmadot\right)\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\frac{\sigmadot}{3}\right] \\
+%&=\frac{1}{4 \pi}\frac{e^{-m_\pi r}}{m_\pi r}\left[\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\left(1+\frac{3}{m_\pi r}+\frac{3}{(m_\pi r)^2}\right)+\frac{\sigmadot}{3}\right] \\
+&=\left[\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\w{2}{1}{2}{m_\pi r}+\frac{\sigmadot}{3}\w{0}{1}{0}{m_\pi r}\right]
 \end{split}
 \end{equation}
 
@@ -340,7 +344,29 @@ which implies that
 \begin{align}\label{eq:wDef}
 \w{\alpha}{\beta}{\ell}{z} =  \frac{2}{\pi} \int dk \, k^2 \, \frac{k^\alpha}{(1+k^2)^\beta} j_\ell(k z)
 \end{align}
-with $\vec{z} \equiv m \vec{r}$ and $k$ both dimensionless. Below, we tabulate this integral for selected values of $\alpha, \beta, \ell$. The first function we recover, for the case of $(\alpha, \beta, \ell ) = (0,1,0)$, is nothing but a Yukawa potential. 
+with $\vec{z} \equiv m \vec{r}$ and $k$ both dimensionless. In Table~\ref{table:wTable} we give the integrated results for selected values of $\alpha, \beta, \ell$. The first function we recover, for the case of $(\alpha, \beta, \ell ) = (0,1,0)$, is nothing but a Yukawa potential.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| c c c | c |}
+\hline
+$\alpha$ & $\beta$ & $\ell$ & $ \w{\alpha}{\beta}{\ell}{z}$ \\
+\hline
+0 & 0 & 0 & $ 4\pi \delta^{(3)}(\vec{z}) $ \\
+0 & 1 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} $ \\
+2 & 1 & 0 & $ -\frac{\displaystyle e^{-z}}{\displaystyle z} + 4\pi \delta^{(3)}(\vec{z}) $ \\
+1 & 1 & 1 &  $\frac{\displaystyle e^{-z}}{\displaystyle z} (1 + \tfrac{1}{z})  $ \\
+2 & 1 & 2 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} (1+ \tfrac{3}{z} + \tfrac{3}{z^2} )$ \\
+0 & 2 & 0 & $ \frac{\displaystyle e^{-z}}{2} $ \\
+2 & 2 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} (-\tfrac{z}{2} + 1 ) $ \\
+2 & 2 & 2 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} (\tfrac{z}{2} + \tfrac{1}{2} ) $ \\
+4 & 2 & 0 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} (\tfrac{z}{2} - 2 ) + 4 \pi \delta^3( \vec{z} )  $ \\
+4 & 2 & 2 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} ( - \tfrac{z}{2} + \tfrac{1}{2} + \tfrac{3}{z} + \tfrac{3}{z^2} ) $ \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{table:wTable} Table of selected values for $\w{\alpha}{\beta}{\ell}{z}$ found by integrating equation \eqref{eq:wDef}.}
+\end{table}
 
 To further demonstrate the use of this integral, we now derive the familiar tensor force resulting from one pion exchange. This amplitude is related to the integral
 \begin{equation} 
@@ -359,26 +385,18 @@ we have
 \begin{equation} V_\pi( \mathbf{r})= \frac{g_A^2 }{4 F_\pi^2}  \left(\frac{m_\pi^3}{12 \pi}\right) \left\{ \frac{e^{-m_\pi r}}{m_\pi r} \left[ S_{12}\left(1+\frac{3}{m_\pi r}+ \frac{3}{m_\pi^2 r^2} \right) +  \sigma_1 \cdot \sigma_2 \right] - 4\pi  \sigma_1 \cdot \sigma_2 \delta^3(m_\pi \mathbf{r}) \right\}, 
 \end{equation}
 which is the familiar result.
-\begin{table}
-\begin{center}
-\begin{tabular}{| c c c | c |}
-\hline
-$\alpha$ & $\beta$ & $\ell$ & $ \w{\alpha}{\beta}{\ell}{z}$ \\
-\hline
-0 & 0 & 0 & $ 4\pi \delta^{(3)}(\vec{z}) $ \\
-0 & 1 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} $ \\
-2 & 1 & 0 & $ -\frac{\displaystyle e^{-z}}{\displaystyle z} + 4\pi \delta^{(3)}(\vec{z}) $ \\
-1 & 1 & 1 &  $\frac{\displaystyle e^{-z}}{\displaystyle z} (1 + \tfrac{1}{z})  $ \\
-2 & 1 & 2 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} (1+ \tfrac{3}{z} + \tfrac{3}{z^2} )$ \\
-2 & 2 & 0 & $ \frac{\displaystyle e^{-z}}{\displaystyle z} (-\tfrac{z}{2} + 1 ) $ \\
-2 & 2 & 2 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} (\tfrac{z}{2} + \tfrac{1}{2} ) $ \\
-4 & 2 & 0 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} (\tfrac{z}{2} - 2 ) + 4 \pi \delta^3( \vec{z} )  $ \\
-4 & 2 & 2 & $  \frac{\displaystyle e^{-z}}{\displaystyle z} ( - \tfrac{z}{2} + \tfrac{1}{2} + \tfrac{3}{z} + \tfrac{3}{z^2} ) $ \\
-\hline
-\end{tabular}
-\end{center}
-\caption{\label{table:wTable} Table of selected values for $\w{\alpha}{\beta}{\ell}{z}$ found by integrating equation \eqref{eq:wDef}.}
-\end{table}
+
+Representations in terms of these functions are not unique. When $\alpha=2\beta$, one may rewrite the numerator in \eqref{eq:wDef} using only powers of $q$ less than $\alpha$. As a concrete example, consider the case for $\w{2}{1}{0}{z}$. Because
+\begin{equation}
+\frac{q^2}{q^2+m^2}=1-\frac{m^2}{q^2+m^2}
+\end{equation}
+we immediately see that $\w{2}{1}{0}{z}=\w{0}{0}{0}{z}-\w{0}{1}{0}{z}$, a result which can be confirmed by inspection from Table~\ref{table:wTable}. This rewriting also makes clear the origin of the short-range delta function terms in the Fourier transforms of the form $\w{2\beta}{\beta}{0}{z}$. Other relationships include,
+\begin{align}
+\w{4}{2}{0}{z}&=\w{0}{0}{0}{z}-2 \w{2}{2}{0}{z}-\w{0}{2}{0}{z} \\
+\w{4}{2}{2}{z}&=\w{2}{1}{2}{z}-\w{2}{2}{2}{z}
+\end{align}
+When $\alpha < 2\beta$ similar relationships exist, but require introducing terms with higher powers of $q$ than occur in the original Fourier transform. The transform does not exist when $\alpha>2\beta$. In general, we have attempted to minimize the number of $w$ functions which appear in the expressions throughout this paper rather than expand them in this way.
+
 
 
 \bibliography{References}
