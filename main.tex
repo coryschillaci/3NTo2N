@@ -281,22 +281,38 @@ For all pieces of the N$^2$LO 3N interaction besides the purely short range cont
 From the 2PE term, a large number of unique terms are generated for the effective interaction. The $V_1$ piece again produces both a local part 
 \begin{multline}
 V^{1}_{12,\text{eff}}(\rot)=-\frac{c_1 m_\pi^6}{8\pi}\left(\frac{g_A}{F_\pi^2}\right)^2 \rho_{I=0}\taudot\:\\
- \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo \w{2}{2}{2}{m_\pi r} +\frac{\sigmadot}{3}  \w{2}{2}{0}{m_\pi r} \right)
+ \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo \w{2}{2}{2}{m_\pi r} -\frac{\sigmadot}{3}  \w{2}{2}{0}{m_\pi r} \right)
 \end{multline}
 and a nonlocal part 
 
 \begin{multline}
 V^{1}_{12,\text{eff}}(\rot,\rotp)=-\frac{c_1 m_\pi^9}{48\pi} \left(\frac{g_A}{F_\pi^2}\right)^2 
 \left\{ \vphantom{\frac{1}{3}} \right. \\
-\left[ \taudot \: \rhohat{0}{|\rot-\rotp|} + \tau_3(1) \rhohat{1}{|\rot-\rotp|} \right] \w{1}{1}{1}{m_\pi r_{12}} \w{1}{1}{1}{m_\pi | \rot-\rotp | }\\
+\left[ \taudot \: \rhohat{0}{|\rot-\rotp|} + \tau_3(1) \rhohat{1}{|\rot-\rotp|} \right] w(1,1,1, m_\pi r_{12})w(1,1,1, m_\pi | \rot-\rotp | )\\
 \times \left( \sigmatwo \cdot [ Y_1 (\hat{r}_{12}) \otimes Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2
- +\frac{1}{2}(\sigmacross)\cdot (Y_1 (\hat{r}_{12}) \times Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ) \right. \\
-\left.+\frac{\sigmadot}{3} Y_1 (\hat{r}_{12}) \cdot Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)
+ )  
+ +\frac{\sigmadot}{3} Y_1 (\hat{r}_{12}) \cdot Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)
 +\rot\leftrightarrow\rotp\right) \\
-+\left[3\rhohat{0}{|\rot-\rotp|}-\tau_3(1)\rhohat{1}{|\rot-\rotp|}\right] \w{1}{1}{1}{m_\pi r_{12}} \w{1}{1}{1}{m_\pi \rotpr} \\
++ i \taucrossthree\: \rhohat{1}{|\rot-\rotp|} \: \left(\fracphantom
+\frac{1}{2}(\sigmacross)\cdot (Y_1 (\hat{r}_{12}) \times Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)-\rot\leftrightarrow\rotp\right) \\
++\left[3\rhohat{0}{|\rot-\rotp|}-\tau_3(1)\rhohat{1}{|\rot-\rotp|}\right]w(1,1,1, m_\pi r_{12})w(1,1,1, m_\pi \rotpr) \\
 \times\left.\left(i\vec{\sigma}_1 \cdot (Y_1 (\hat{r}_{12}) \times Y_1(\rotphat)) + Y_1 (\hat{r}_{12}) \cdot Y_1(\rotphat) \fracphantom \right)
 \right\}
 \end{multline}
+
+% 
+
+For $V_3$ the spin and isospin structure of the 3N interaction is identical to that of $V_1$ so the result is similar. Again we find one term which is purely local,
+
+\begin{multline}
+V^{3}_{12,\text{eff}}(\rot)=-\frac{c_3 }{4}\frac{m_\pi^6}{4\pi}\left(\frac{g_A}{F_\pi^2}\right)^2 \rho_{I=0}\;\taudot\:\\
+ \times\left(\sqrt{\frac{8\pi}{15}}Y_2(\hat{r})\cdot\sigmatwo\: \w{4}{2}{2}{m_\pi r} - \frac{\sigmadot}{3}\:  \w{4}{2}{0}{m_\pi r} \right)
+\end{multline}
+
+as well as a nonlocal part,
+%\begin{multline}
+%V^{3}_{12,\text{eff}}(\rot,\rotp)=\frac{c_3 }{4}\frac{m_\pi^9}{32\pi^2}\left(\frac{g_A}{F_\pi^2}\right)^2 \left[\taudot \rhohat{0}
+%\end{multline}
 
 The $V_4$ term generates only a nonlocal term because the terms diagonal in the spectator particle all sum to zero. The nonlocal terms are
 
@@ -397,6 +413,9 @@ we immediately see that $\w{2}{1}{0}{z}=\w{0}{0}{0}{z}-\w{0}{1}{0}{z}$, a result
 \end{align}
 When $\alpha < 2\beta$ similar relationships exist, but require introducing terms with higher powers of $q$ than occur in the original Fourier transform. The transform does not exist when $\alpha>2\beta$. In general, we have attempted to minimize the number of $w$ functions which appear in the expressions throughout this paper rather than expand them in this way.
 
+We assume here that matrix elements will be evaluated within a formalism which regulates the interaction self-consistently, such as Harmonic-Oscillator-Based Effective Theory (HOBET) \cite{PhysRevC.77.034005}. If a momentum space regulator is desired, it may be naturally inserted into the Fourier transform \eqref{eq:wDef} thereby modifying the resulting expressions for the functions $w$. DO I NEED TO THINK ABOUT THE $k_\delta$ INTEGRAL?
+
+Past work on the in-medium density dependent effective interactions has variously neglected the Dirac delta contact terms which arise from the Fourier transforms. WRITE SOME MORE HERE.
 
 
 \bibliography{References}
