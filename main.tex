@@ -115,7 +115,7 @@ Department of Physics, University of California, Berkeley, California 94720, USA
              %  but any date may be explicitly specified
 
 \begin{abstract}
-We analytically reduce the chiral three-nucleon interaction at N$^2$LO to a density-dependent effective two-body potential by summing the third particle over the states of a spin-symmetric Fermi gas. Results are given for the potential in momentum space and in coordinate space. A local expansion of the coordinate space potential is also derived. We give estimates for the size of the density dependent corrections to the two-body forces and the nonlocality of the in-medium effective potential.
+We analytically reduce the chiral three-nucleon interaction at N$^2$LO to a density-dependent effective two-body potential by summing the third particle over the states of a spin-symmetric Fermi gas. Results are given for the potential in momentum space and in coordinate space. A local expansion of the coordinate space potential is also derived. 
 \end{abstract}
 
 %\pacs{Valid PACS appear here}% PACS, the Physics and Astronomy
@@ -130,45 +130,56 @@ We analytically reduce the chiral three-nucleon interaction at N$^2$LO to a dens
 
 Three-nucleon (3N) interactions first appear in the chiral lagrangian at order N$^2$LO. Numerous studies have shown that inclusion of the 3N forces is essential for correctly modeling nuclear physics in all regimes, from light and medium nuclei \cite{PhysRevLett.99.042501,0954-3899-39-8-085111} to nuclear matter \cite{PhysRevC.82.014314,PhysRevC.83.031301}.
 
-However, in modern numerical approaches such as the ab into no core shell model, including 3N forces exactly in the calculations requires use of basis spaces which are an order of magnitude large than the 2N case. The increased demands on memory and computing hours  rapidly becomes prohibitive even for light nuclei \cite{Barrett2013131}. 
+However, in modern numerical approaches such as the ab initio no core shell model, including 3N forces exactly in calculations requires the use of basis spaces which are orders of magnitude larger than the two-nucleon (2N) case. The increased demands on memory and computing hours rapidly become prohibitive even for light nuclei \cite{Barrett2013131}. 
 
-Because we have a highly accurate but computationally intensive theory, this suggests an effective theory approach. Here, we analytically reduce the chiral three-body interaction to an average two-body interaction which depends on the local nucleon density. This approach has been successfuly applied in the reduction of two-body interactions to single particle potentials \cite{PhysRev.133.B329,AdelbergerHaxton}.
+Because we have a highly accurate but computationally intensive theory, this suggests an effective theory approach. Here, we analytically reduce the chiral three-body interaction to an average two-body interaction which depends on the local nucleon density. This approach has been successfuly applied in the reduction of two-body interactions to single particle potentials \cite{PhysRev.133.B329,AdelbergerHaxton}. 
 
-Recent efforts have found the effective potential in cases with specific isospin constraints, either for pure neutron matter \cite{PhysRevC.82.014314}, for isospin symmetric nuclei \cite{PhysRevC.81.024002} and in general for asymmetric isospins within the Hartree-Fock framework \cite{Drischler:2015eba}. These results have been used in, for example, calculations of nuclear pairing energies using nuclear energy density functionals \cite{0954-3899-39-1-015108}. An alternate approach to deriving density-dependent effective potential using correlated basis functions was also proposed in \cite{PhysRevC.83.054003}.
+Early efforts to develop a two-body effective interaction for the 3N part of the chiral potential focussed  on cases with specific isospin constraints. Explicit expressions for  the effective potential in momentum space have been derived for pure neutron matter \cite{PhysRevC.82.014314} and for isospin symmetric nuclei \cite{PhysRevC.81.024002}. These results have been applied succesfully in calculations of nuclear pairing energies using nuclear energy density functionals \cite{0954-3899-39-1-015108}. The momentum space potential for arbitrary isospins was recently derived using \texttt{MATHEMATICA} for asymmetric isospins, although no explicit expressions were given\cite{Drischler:2015eba}. An alternate approach to deriving density-dependent effective potential using correlated basis functions was also proposed in \cite{PhysRevC.83.054003}.
 
-Here, we derive and state a fully general result valid for arbitrary isospin composition and without neglecting any contributions. Expressions for the result are given in both momentum and coordinate space. Furthermore, we perform an expansion to give a local approximation to the full effective potential.
+Here, we derive and state expressions for the effective potential valid for arbitrary isospin composition and without neglecting any contributions. The averaging procedure to derive the effective potential is described in Section~\ref{sec:averaging}. Expressions for the effective potential are given in both momentum and coordinate space (Sections~\ref{sec:momentum} and \ref{sec:coord}, respectively). All coordinate space potentials are written fully in terms of spherical tensors in order to facilitate their use. In Section~\ref{sec:local}, we perform an expansion to obtain a local approximation for the full effective potential, which otherwise contains nonlocal terms.
 
-\section{Averaging over a Fermi Gas core}
+\section{\label{sec:averaging}Averaging over a Fermi Gas core}
 
 We can imagine a nucleus such as $^{18}$F or $^{42}$Ca in which there are two particles outside an inert core. These particles interact via the 3N force with all of the core nucleons as well. If we model the core as a spin-symmetric Fermi gas, then summation over the interactions with the core nucleons gives a dependence on the Fermi momentum, which is analytically related to the density of the core. 
 
 The Fermi gas states are momentum eigenstates of the form
 \begin{equation}
-\ket{\alpha}=\ket{\vec{k};m_s,m_t}
+\ket{\alpha}=\ket{\vec{k}_\alpha;m_{s_\alpha},m_{t_\alpha}}
 \end{equation}
+where $m_s$ and $m_t$ are the spin and isospin projections, respectively. We normalize the momentum eigenstates such that $\braket{\vec{k} | \vec{k}'}=(2\pi)^3\delta^{(3)}(\vec{k}-\vec{k}')$. 
 
-We can then sum over interactions with one core nucleon to generate an effective two-body potential $\overline{V}_{3N}$ such that
+We can then sum over interactions with one core nucleon to generate an effective two-body potential $V_{12,\text{eff}}$ such that
 %\begin{equation}
 %\bra{\alpha_1,\alpha_2}\overline{V}_{3N}\ket{\beta_1,\beta_2}=\sum_{\gamma}\braket{\alpha_1,\alpha_2,\gamma | V_{3N} | \beta_1,\beta_2,\gamma}
 %\end{equation}
 \begin{equation}
-\frac{1}{2} \bra{\alpha_1\:\alpha_2} \hat{V}_{12,\text{eff}} \mathcal{A}_{12}\ket{\beta_1 \:\beta_2 }=\frac{1}{6} \sum_{\gamma} \bra{\alpha_1\:\alpha_2 \: \gamma} \hat{V}_{123} \mathcal{A}_{123} \ket{\beta_1 \:\beta_2 \gamma}
+\frac{1}{2} \bra{\alpha_1\:\alpha_2}  V_{12,\text{eff}}\ket{\beta_1 \:\beta_2 }=\frac{1}{6} \sum_{\gamma} \bra{\alpha_1\:\alpha_2 \: \gamma} \hat{V}_{123}  \ket{\beta_1 \:\beta_2 \gamma}
 \end{equation}
 where the the Fermi gas is assumed to be spin symmetric but not necessarily isospin symmetric, so that the sum can be expanded as
 \begin{equation}
-\sum_\gamma=\sum_{m_s(\gamma)=\pm 1/2}\left(\int_{|k|<k_{F,p}} \frac{d^3k_\gamma}{(2\pi)^3} \delta_{m_{t}(\gamma),+1/2} \quad+\int_{|k|<k_{F,n}} \frac{d^3k_\gamma}{(2\pi)^3} \delta_{m_{t}(\gamma),-1/2}\right)
+\sum_\gamma=\sum_{m_s(\gamma)=\pm 1/2}\int \frac{d^3k_\gamma}{(2\pi)^3} \Big[\delta_{m_{t}(\gamma),+1/2} n_p(k_\delta) +\delta_{m_{t}(\gamma),-1/2} n_p(k_\delta) \Big]
 \end{equation}
+with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the fermi gas, respectively. We will use the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F,p}-k)$ and $n_n(k)=\theta(k_{F,n}-k)$. However, if another density of states would be more appropriate the effect would merely be to change the integrals  \eqref{eq:kF}(GIVE EQN NUMBERS).
 
 Density dependence arises from the momentum integrals. The standard relationship for a homogeneous Fermi gas with two internal spin degrees of freedom is 
-
 \begin{equation}\label{eq:kF}
-\rho=\frac{1}{V}\sum_{m_{s}=\pm 1/2}\int^{|k_\delta|<k_F}\frac{d^3\vec{k}_\delta}{(2\pi)^3}\braket{\vec{k}_\delta m_s m_t | \vec{k}_\delta m_s m_t}=\frac{k_F^3}{3\pi^2}
+\rho=\frac{1}{V}\sum_{m_{s}=\pm 1/2}\int \frac{d^3\vec{k}_\delta}{(2\pi)^3}\:n(k_\delta)
+=\frac{1}{V}\sum_{m_{s}=\pm 1/2}\int^{|k_\delta|<k_F}\frac{d^3\vec{k}_\delta}{(2\pi)^3}=\frac{k_F^3}{3\pi^2}
 \end{equation}
 
 As they will arise repeatedly in our calculations, we define dimensionless isoscalar and isovector combinations of the densities:
 \begin{equation}\label{eq:densities}
 \rho_{I=0,1}=\frac{\rho_P\pm\rho_N}{m_\pi^3}
 \end{equation}
+
+Because nucleons obey Fermi statistics, the nuclear Hamiltonian must commute with the antisymmetrization operator $\mathcal{A}_{123}$. Alternately, we can instead obtain the same matrix elements by evaluating the potential between antisymmetric states, e.g.
+\begin{equation}
+\begin{split}
+\ket{\alpha_1\:\alpha_2\:\alpha_3}_{\text{assym}} = \sqrt{\frac{1}{6}} \left( \ket{\alpha_1\:\alpha_2\:\alpha_3}\right. & - \ket{\alpha_1\:\alpha_3\:\alpha_2} - \ket{\alpha_2\:\alpha_1\:\alpha_3}   \\
+&\hspace{.5cm}\left. +\ket{\alpha_2\:\alpha_3\:\alpha_1} - \ket{\alpha_3\:\alpha_2\:\alpha_1} + \ket{\alpha_3\:\alpha_1\:\alpha_2} \right)
+\end{split}
+\end{equation}
+Throughout this paper we will, for brevity, generally write the potential in a form which is not fully antisymmetrized but which is equivalent to the correct potential when evaluated between antisymmetric states. 
 
 \section{\label{sec:momentum} The effective potential in momentum space}
 
@@ -200,19 +211,30 @@ where
 \begin{equation}
 F_{ijk}^{\alpha\beta}=\delta^{\alpha \beta}\left[-\frac{4c_1m_\pi^2}{F_\pi^2}+\frac{2c_3}{F_\pi^2}\vec{q}_i\cdot\vec{q}_j\right]+\sum_\gamma\frac{c_4}{F_\pi^2}\epsilon^{\alpha\beta\gamma}\tau^\gamma_k\vec{\sigma}_k\cdot\left(\vec{q}_i\times\vec{q}_j\right)
 \end{equation}
+and $\vec{q}_i=\vec{k}_i' - \vec{k}$ is the difference in the final and initial state momenta for particle $i \in \{1,2,3\}$.
 
-These represent a three-body contact potential, a one-pion exchange plus contact interaction (1PE), and a two-pion exchange (2PE) interaction as shown in Figure \ref{fig:3NF}. Note that the 2PE term can be split into parts proportional to $c_1, c_3$ and $c_4$ as $V_C=V_1+V_2+V_4$. Analytically summing over the Fermi gas particles to find an effective potential corresponds to the summations shown in Figure \ref{fig:eff-diagram}. Note that $c_D$ and $c_E$ are unitless, while $c_1, c_3$ and $c_4$ have units of inverse energy.
+These represent a three-body contact potential, a one-pion exchange plus contact interaction (1PE), and a two-pion exchange (2PE) interaction as shown in Figure \ref{fig:3NF}. Note that the 2PE term can be split into parts proportional to $c_1, c_3$ and $c_4$ as $V_C=V_1+V_2+V_4$. Analytically summing over the Fermi gas particles to find an effective potential corresponds to the summations shown in Figure \ref{fig:eff-diagram}. Note that $c_D$ and $c_E$ are unitless, while $c_1, c_3$ and $c_4$ have units of inverse energy. 
 
 \begin{figure}
 \includegraphics[scale=0.6,page=1]{Figures/InMediumDiagrams2}
 \caption{\label{fig:eff-diagram} Diagrammatic representation of $V_{12,\text{eff}}$.}
 \end{figure}
- We have made the approximation that the net momentum of the spectator particles is zero with respect to the center of mass frame for the Fermi gas, so that the relative initial state and final state momenta are given by
+
+For a standard two-body interaction, the matrix elements may depend only on the quantities
  \begin{equation}
- \vec{k}=\frac{\vec{k}_1-\vec{k}_2}{2},\qquad \vec{k}'=\frac{\vec{k}'_1-\vec{k}'_2}{2}
+ \vec{k}=\frac{\vec{k}_1-\vec{k}_2}{2},\quad \vec{k}'=\frac{\vec{k}'_1-\vec{k}'_2}{2}
+ \end{equation}
+ in order for the Hamiltonian to be Galilean invariant. However, the original three-body interaction may also depend on the total momentum of the two particles,
+ \begin{equation}
+ \vec{P}=\vec{k}_1+\vec{k}_2, \quad  \vec{P}'=\vec{k}'_1+\vec{k}'_2
+ \end{equation}
+ through the relative Jacobi momenta 
+ \begin{equation}
+ \vec{\pi}_1=\frac{1}{\sqrt{2}}\left(\vec{k}_1-\vec{k}_2\right), \quad  \vec{\pi}_2=\frac{1}{\sqrt{6}}\left(\vec{k}_1+\vec{k}_2-2\vec{k}_3\right).
  \end{equation}
  
- % What is best way to notate \tau_3(1) type operators?
+We will make the approximation that the net momentum of the two valence particles is zero, and therefore so is the net momentum of the Fermi gas particles. Although this makes sense in the context of a nucleus with an inert core, for full many-body calculations it cannot be true that all pairs of particles have zero total momentum in a given reference frame. For a Fermi gas, the average net momentum of two particles scales as $\overline{|k_1+k_2|} \sim V^2\rho^{7/6} \sim N^2 k_F$. We therefore expect that the $P=0$ approximation is valid for many-body calculations when the density is low. This is confirmed for nuclear matter by \cite{Drischler:2015eba}, where the authors also note that it seems to be a better approximation when the system is very isospin asymmetric. 
+ 
  The effective interactions for \eqref{eq:V_E} and \eqref{eq:V_D} are given in momentum space by
  \begin{align}
  \veff^E=-&\frac{3c_Em_\pi^3}{2F_\pi^4 \Lambda_\chi}\left(\rhozero-\rhoone\tauplusthree\right)\\
@@ -235,7 +257,7 @@ All variables appear in the dimensionless combinations $\tilde{m}_\pi=m_\pi/k_F^
  \veff^{c_1}=-&c_1 m_\pi^5\left(\frac{g_A}{F_\pi^2}\right)^2 \left[ \rhozero\vec{\tau}_1\cdot\vec{\tau}_2 \:\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{\left(q^2+m_\pi^2\right)^2} \right]
 \end{align}
  
-\section{The effective potential in coordinate space}
+\section{\label{sec:coord}The effective potential in coordinate space}
 
 By evaluating the Fourier transforms of the momentum space effective potential, we obtain the potential in coordinate space. Each term in the full potential contains couplings of varying numbers of vector operators operating on spatial and spin quantum numbers. Throughout, we give the potentials by first coupling any coordinate operators with one another (e.g. forming the spherical harmonics $Y_l(\hat{r}_{12})$ and $Y_l(\rotphat)$), then coupling these operators together before finally coupling with the spin operators.
 
@@ -368,7 +390,7 @@ V^{4}_{12,\text{eff}}(\rot,\rotp) = \frac{c_4}{4}\frac{g_A^2}{F_\pi^2}\frac{m_\p
 \times\sqrt{\frac{5}{2}} \frac{8\pi}{15} \vec{\sigma}_1\cdot\left[Y_2(\hat{r}_{12})\otimes Y_2(\rotphat)\right]_1 \w{2}{1}{2}{m_\pi r_{12}} \w{2}{1}{2}{m_\pi \rotpr} \left.\fracphantom\right\}
 \end{multline}
 
-\section{A first order local expansion}
+\section{\label{sec:local}A first order local expansion}
 
 Although nonlocality is a common feature of nuclear potentials \cite{PhysRevC.53.R1483}, working with local potentials is typically simpler and less computationally expensive. In light of this, we develop here a local approximation to the full density-dependent effective interaction.
 
