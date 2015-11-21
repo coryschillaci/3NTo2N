@@ -22,7 +22,7 @@
  preprint,
 %superscriptaddress,
 %groupedaddress,
-%unsortedaddress,
+%unsortedaddress, 
 %runinaddress,
 %frontmatterverbose, 
 %preprint,
@@ -159,7 +159,7 @@ where the the Fermi gas is assumed to be spin symmetric but not necessarily isos
 \begin{equation}
 \sum_\gamma=\sum_{m_s(\gamma)=\pm 1/2}\int \frac{d^3k_\gamma}{(2\pi)^3} \Big[\delta_{m_{t}(\gamma),+1/2} n_p(k_\delta) +\delta_{m_{t}(\gamma),-1/2} n_p(k_\delta) \Big]
 \end{equation}
-with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the fermi gas, respectively. We will use the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F,p}-k)$ and $n_n(k)=\theta(k_{F,n}-k)$. However, if another density of states would be more appropriate the effect would merely be to change the integrals  \eqref{eq:kF}(GIVE EQN NUMBERS).
+with $n_p(k)$ and $n_n(k)$ the density of states for the protons and neutrons in the fermi gas, respectively. We will use the $T=0$ Fermi-Dirac distribution, $n_p(k)=\theta(k_{F,p}-k)$ and $n_n(k)=\theta(k_{F,n}-k)$. However, if another density of states would be more appropriate the effect would merely be to change the integrals \eqref{eq:kF}(GIVE EQN NUMBERS).
 
 Density dependence arises from the momentum integrals. The standard relationship for a homogeneous Fermi gas with two internal spin degrees of freedom is 
 \begin{equation}\label{eq:kF}
@@ -237,29 +237,31 @@ We will make the approximation that the net momentum of the two valence particle
 $\overline{|k_1+k_2|} \sim V^2 k_F^7 
 %\sim N^2 k_F 
 \sim N^2 \rho^{1/3}$. 
-We therefore expect that the $P=0$ approximation is valid for many-body calculations when the density is low. This is confirmed for nuclear matter by \cite{Drischler:2015eba}, where the authors also note that it seems to be a better approximation when the system is very isospin asymmetric. 
+We therefore expect that the $P=0$ approximation is valid for many-body calculations when the density is low. This density-dependence is confirmed for nuclear matter by \cite{Drischler:2015eba}, where the authors also note that it seems to be a better approximation when the system is very isospin asymmetric. 
  
  The effective interactions for \eqref{eq:V_E} and \eqref{eq:V_D} are given in momentum space by
  \begin{align}
- \veff^E=-&\frac{3c_Em_\pi^3}{2F_\pi^4 \Lambda_\chi}\left(\rhozero-\rhoone\tauplusthree\right)\\
+ \veff^E=-\frac{3c_Em_\pi^3}{2F_\pi^4 \Lambda_\chi}&\left(\rhozero-\rhoone\tauplusthree\right)\\
  \begin{split}
- \veff^D=-&\frac{c_Dg_A m_\pi^3}{8 F_\pi^4\Lambda_\chi}\left[\rhozero\taudot \frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2}  - \rhoone \tauplusthree\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2} \right. \\
-&\left. \fracphantom+ (3-\taudot\sigmadot) \left(\Gamma_{I=0}(k)+\Gamma_{I=0}(k')\right)  -(1+\sigmadot)\tauplusthree \left(\Gamma_{I=1}(k) + \Gamma_{I=1}(k')\right) \right]
+ \veff^D=-\frac{c_Dg_A m_\pi^3}{8 F_\pi^4\Lambda_\chi}&\left[\rhozero\taudot \frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2}  - \rhoone \tauplusthree\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{q^2+m_\pi^2} \right. \\
+&+ \left(3 -\taudot\vec{\sigma}_1\cdot\hat{k}\:\vec{\sigma}_2\cdot\hat{k}\, \right) \Big[\Gamma_{0,I=0}(k)-2 \Gamma_{1,I=0}(k)\Big] \\
+&+  \left(3 -\taudot\frac{\sigmadot}{3} \right) \,\Gamma_{2,I=0}(k) \\
+ &-\tauplusthree \left(1 +\taudot\vec{\sigma}_1\cdot\hat{k}\:\vec{\sigma}_2\cdot\hat{k} \right) \Big[\Gamma_{0,I=1}(k)-2 \Gamma_{1,I=1}(k)\Big] \\
+ &-\tauplusthree  \left(1+\taudot\frac{\sigmadot}{3} \right) \Gamma_{2,I=1}(k)
++ \vec{k}\leftrightarrow\vec{k}'\left.\fracphantom\right]
  \end{split} 
  \end{align}
-Evaluating the isospin  of these vanish for systems built purely of neutrons or protons. The functions $\Gamma_{I=0,1}(k)=\Gamma_{P}(k)\pm\Gamma_{N}(k)$ are momentum dependent analogues of the densities \eqref{eq:densities} which arise from integrating over the spectator momentum,
- \begin{equation}
- \begin{split}
- \Gamma_{N,P}(k)&=\frac{1}{m_\pi^3}\int^{|k_\delta|<k_F^{N,P}}\frac{d^3\vec{k}_\delta}{(2\pi)^3} \frac{(\vec{k}-\vec{k}_\delta)^2}{(\vec{k}-\vec{k}_\delta)^2+m_\pi^2} \\
- &=\frac{\rho_{N,P}}{8m_\pi^3}\left(2\left[2-3\tilde{m}_\pi^2+3\tilde{m}_\pi^3\left(\arctan\frac{1-\tilde{k}}{\tilde{m}_\pi}+\arctan\frac{1+\tilde{k}}{\tilde{m}_\pi}\right)\right]\right. \\
- &\left.\qquad\qquad\qquad\qquad\qquad-\frac{3}{2 \tilde{k}}\tilde{m}_\pi^2\left(\tilde{k}^2-\tilde{m}_\pi^2-1\right)\log\frac{\tilde{m}_\pi^2+(\tilde{k}-1)^2}{\tilde{m}_\pi^2+(\tilde{k}+1)^2}\right)
- \end{split}
- \end{equation}
-All variables appear in the dimensionless combinations $\tilde{m}_\pi=m_\pi/k_F^{N,P}$ and $\tilde{k}=k/k_F^{N,P}$. For actual calculations, one can replace $k_F$ with the observable densities using \eqref{eq:kF}.%$k_F^{N,P}=\left(3\pi^2 \rho_{N,P}\right)^{1/3}$.
+Note that neither of these terms contribute for systems of pure neutrons or protons due to the antisymmetrization, consistent with the behavior of the original 3N interactions which also vanish. The functions $\Gamma_{\alpha,I=0,1}(k)=\Gamma_{\alpha,P}(k)\pm\Gamma_{\alpha,N}(k)$ are momentum dependent analogues of the densities \eqref{eq:densities} which arise from integrating over the spectator momentum,
+\begin{equation}
+\Gamma_{\alpha,N,P}(k) = \frac{k^{2-\alpha}}{m_\pi^3}\int\frac{d^3\vec{k}_\delta}{(2\pi)^3} n_{N,P}(k_\delta) \frac{\left\{1,k_\delta\cos\theta,k_\delta^2\right\}_\alpha}{(\vec{k}-\vec{k}_\delta)^2+m_\pi^2}
+\end{equation}
+Explicit expressions for these sums with the Fermi-Dirac density of states is given in appendix~\ref{app:momSums}.
 
 \begin{align}
  \veff^{c_1}=-&c_1 m_\pi^5\left(\frac{g_A}{F_\pi^2}\right)^2 \left[ \rhozero\vec{\tau}_1\cdot\vec{\tau}_2 \:\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{\left(q^2+m_\pi^2\right)^2} \right]
 \end{align}
+
+DISCUSS: In \cite{PhysRevC.81.024002}, an argument is made that for the interaction in isospin symmetric matter, the effective terms generated from the 3N interaction are partially corrections to 2N 1PE. In particular, $c_D$ term reduces (eqn 24) and $c_E$ enhances (eqn 11) 
  
 \section{\label{sec:coord}The effective potential in coordinate space}
 
@@ -299,7 +301,7 @@ W^{\text{LR}}_{1PE}(\vec{r})&=\frac{e^{-m_\pi r}}{m_\pi r}\left[\left(\vec{\sigm
 The density dependence is now also mixed with spatial dependence, which we define in analogy with \eqref{eq:densities} as 
 \begin{equation}\label{eq:hatdensities}
 \hat{\rho}_{I=0,1}(r)=%\frac{\rho_P}{m_\pi^3}\:\frac{3 j_1(k^P_F r)}{k_F^P r}\pm\frac{\rho_N}{m_\pi^3}\:\frac{3 j_1(k^N_F r)}{k_F^N r}=
-\frac{1}{m_\pi^3}\left[ \left(\frac{3 \rho_P}{\pi}\right)^{2/3} \frac{ j_1( [3\pi^2 \rho_P]^{1/3}  r)}{ r} \pm \left(\frac{3 \rho_N}{\pi}\right)^{2/3} \frac{ j_1( [3\pi^2 \rho_N]^{1/3}  r)}{ r} \right]
+\frac{1}{m_\pi^3}\left[ \left(\frac{3 \rho_P}{\pi}\right)^{2/3} \frac{ j_1( [3\pi^2 \rho_P]^{1/3}  r)}{ r} \pm \left(\frac{3 \rho_N}{\pi}\right)^{2/3} \frac{ j_1( [3\pi^2 \rho_N]^{1/3}  r)}{ r} \right].
 \end{equation}
 
 For all pieces of the N$^2$LO 3N interaction besides the purely short range contact $V_E$, nonlocal effective interactions like \eqref{eq:1PENonlocal} are generated from summing over terms which are not diagonal in the spectator particle. Coordinate space potentials are generally nonlocal when there is a momentum dependence of the interaction. In this case, the $\Gamma$ terms with complicated momentum dependence in Section \ref{sec:momentum} are the source.
@@ -314,21 +316,21 @@ and a nonlocal part
 \begin{multline}
 V^{1}_{12,\text{eff}}(\rot,\rotp)=-\frac{c_1 m_\pi^9}{48\pi} \left(\frac{g_A}{F_\pi^2}\right)^2 
 \left\{ \fracphantom \right. \\
-\left[ \taudot \: \rhohat{0}{|\rot-\rotp|} + \tau_1^3 \rhohat{1}{|\rot-\rotp|} \right] w(1,1,1, m_\pi r_{12})w(1,1,1, m_\pi | \rot-\rotp | ) \\
+\left[ \taudot \: \rhohat{0}{|\rot-\rotp|} + \tau_1^3 \rhohat{1}{|\rot-\rotp|} \right] \w{1}{1}{1}{ m_\pi r_{12}}\w{1}{1}{1}{ m_\pi | \rot-\rotp | } \\
 \times \left( \sigmatwo \cdot [ Y_1 (\hat{r}_{12}) \otimes Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2
  )  
  +\frac{\sigmadot}{3} Y_1 (\hat{r}_{12}) \cdot Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)
 +\rot\leftrightarrow\rotp\right) \\
 %
-+ \tau_1^3 \rhohat{1}{|\rot-\rotp|} \: w(1,1,1, m_\pi r_{12})w(1,1,1, m_\pi | \rot-\rotp | ) \\ 
++ \tau_1^3 \rhohat{1}{|\rot-\rotp|} \: \w{1}{1}{1}{m_\pi r_{12}} \w{1}{1}{1}{m_\pi | \rot-\rotp | } \\ 
 \times \left(\fracphantom
 \frac{1}{2}(\sigmacross)\cdot (Y_1 (\hat{r}_{12}) \times Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) )+\rot\leftrightarrow\rotp\right) \\ 
 %
-- i \taucrossthree\: \rhohat{1}{|\rot-\rotp|} \: w(1,1,1, m_\pi r_{12})w(1,1,1, m_\pi | \rot-\rotp | )  \\
+- i \taucrossthree\: \rhohat{1}{|\rot-\rotp|} \: \w{1}{1}{1}{ m_\pi r_{12}}\w{1}{1}{1}{m_\pi | \rot-\rotp | }  \\
 \times\left(\fracphantom
 \frac{1}{2}(\sigmacross)\cdot (Y_1 (\hat{r}_{12}) \times Y_1 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right))-\rot\leftrightarrow\rotp\right) \\
 %
-+\left[3\rhohat{0}{|\rot-\rotp|}-\tau_1^3\rhohat{1}{|\rot-\rotp|}\right]w(1,1,1, m_\pi r_{12})w(1,1,1, m_\pi \rotpr) \\
++\left[3\rhohat{0}{|\rot-\rotp|}-\tau_1^3\rhohat{1}{|\rot-\rotp|}\right]\w{1}{1}{1}{ m_\pi r_{12}}w{1}{1}{1}{m_\pi \rotpr} \\
 \times\left.\left(i\vec{\sigma}_1 \cdot (Y_1 (\hat{r}_{12}) \times Y_1(\rotphat)) + Y_1 (\hat{r}_{12}) \cdot Y_1(\rotphat) \fracphantom \right)
 \right\}
 \end{multline}
@@ -346,21 +348,21 @@ as well as a nonlocal part,
 \begin{multline}
 V^{3}_{12,\text{eff}}(\rot,\rotp)=\frac{c_3 }{4}\frac{m_\pi^9}{32\pi^2}\left(\frac{g_A}{F_\pi^2}\right)^2 \left\{\fracphantom\left[\taudot \:\rhohat{0}{|\rot-\rotp|} +\tauplusthree \rhohat{1}{|\rot-\rotp|} \right]\right. \\
 %
-\times\left(\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2 \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} 
+\times\left(\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_2 \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} 
 \right.\\ 
 %
-+\frac{1}{3}\frac{8\pi}{15}\sigmadot Y_2(\hat{r}_{12})\cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
++\frac{1}{3}\frac{8\pi}{15}\sigmadot Y_2(\hat{r}_{12})\cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
 %
--\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2(\hat{r}_{12}) \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |r_{12}- \rotpr|} \\
--\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
-\left.+\frac{1}{9}\sigmadot  \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |r_{12}- \rotpr|}+\; \rot \leftrightarrow \rotp \fracphantom\right) \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2(\hat{r}_{12}) \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |\rot-\rotp|} \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo \cdot Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+\left.+\frac{1}{9}\sigmadot  \w{2}{1}{0}{m_\pi r_{12}}\w{2}{1}{0}{m_\pi |\rot-\rotp|}+\; \rot \leftrightarrow \rotp \fracphantom\right) \\
 %
 %
 +\tau_1^3 \rhohat{1}{|\rot-\rotp|} \\
-\times\frac{\sqrt{5}}{2}\left(\fracphantom  \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} + \; \rot \leftrightarrow \rotp \fracphantom\right)\\
+\times\frac{\sqrt{5}}{2}\left(\fracphantom  \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot - \rotp|} + \; \rot \leftrightarrow \rotp \fracphantom\right)\\
 %
 -i\taucrossthree \rhohat{1}{|\rot-\rotp|} \\
-\times\frac{\sqrt{5}}{2}\left(\fracphantom \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} - \; \rot \leftrightarrow \rotp \fracphantom\right) \\
+\times\frac{\sqrt{5}}{2}\left(\fracphantom \sigmaone \cdot  [ Y_2(\hat{r}_{12})\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) ]_1  \w{2}{1}{2}{m_\pi r_{12}}\w{2}{1}{2}{m_\pi |\rot-\rotp|} - \; \rot \leftrightarrow \rotp \fracphantom\right) \\
 %
 %
 +\left[3\rhohat{0}{|\rot-\rotp|}-\tau_1^3 \rhohat{1}{|\rot-\rotp|}\right]\left( \fracphantom\right. \\
@@ -376,11 +378,11 @@ The $V_4$ term generates only a nonlocal term because the terms diagonal in the 
 V^{4}_{12,\text{eff}}(\rot,\rotp) = \frac{c_4}{4}\frac{g_A^2}{F_\pi^2}\frac{m_\pi^9}{16\pi^2}\left\{ \fracphantom \right. 
 \left(\rhohat{0}{|\rot-\rotp|}\taudot-\rhohat{1}{|\rot-\rotp|}\tauplusthree\right)
 \\
-\times\left( -\frac{4}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2(\rotphat)\w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{0}{m_\pi |r_{12}- \rotpr|} \right. \\
-+\frac{2}{9}\sigmadot\; \w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{0}{m_\pi |r_{12}- \rotpr|} \\
-+\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot \left[ Y_2(\rotphat)\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \right]_2 \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
--\frac{1}{3}\frac{8\pi}{15}\sigmadot \; Y_2(\rotphat)\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
--\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)\w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |r_{12}- \rotpr|} \\
+\times\left( -\frac{4}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2(\rotphat)\w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{0}{m_\pi |\rot-\rotp|} \right. \\
++\frac{2}{9}\sigmadot\; \w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{0}{m_\pi |\rot-\rotp|} \\
++\sqrt{\frac{7}{12}}\frac{8\pi}{15}\sigmatwo\cdot \left[ Y_2(\rotphat)\otimes Y_2 \left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \right]_2 \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+-\frac{1}{3}\frac{8\pi}{15}\sigmadot \; Y_2(\rotphat)\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right) \w{2}{1}{2}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
+-\frac{1}{3}\sqrt{\frac{8\pi}{15}}\sigmatwo\cdot Y_2\left(\frac{\rot-\rotp}{|\rot-\rotp|}\right)\w{2}{1}{0}{m_\pi \rotpr}\w{2}{1}{2}{m_\pi |\rot-\rotp|} \\
 \left.+\; \rot \leftrightarrow \rotp \fracphantom\right) \\
 +\left(\rhohat{0}{|\rot-\rotp|}\taudot-\rhohat{1}{|\rot-\rotp|}\tauplusthree\right) \\
 \times \left( 
@@ -404,6 +406,39 @@ m_\pi(\vec{r}-\vec{r}\:')/2 \lesssim
 \end{equation}
 
 \appendix
+
+\section{\label{app:momSums} Momentum space summation over $k_\delta$}
+
+In this section we give explicit expressions for the sum over spectator momentum $\vec{k}_\delta$ in the momentum space expressions of Section~\ref{sec:momentum} assuming the zero-temperature Fermi-Dirac density of states. For $V_D$, we have three distinct integrals  of the form
+
+\begin{equation}
+\Gamma_{\alpha,N,P}(k) = \frac{k^{2-\alpha}}{m_\pi^3}\int^{|k_\delta|<k_F^{N,P}}\frac{d^3\vec{k}_\delta}{(2\pi)^3}  \frac{\left\{1,\vec{k}_\delta\cdot\hat{k},k_\delta^2\right\}_\alpha}{(\vec{k}-\vec{k}_\delta)^2+m_\pi^2}
+\end{equation}
+
+where $\left\{1,k_\delta\cos\theta,k_\delta^2\right\}_\alpha$ indicates that the numerator is $1$ for $\alpha=0$, $k_\delta\cos\theta$ when $\alpha=1$, etc.
+
+The results of performing the integration are (suppressing the $N,P$ index for simplicity)
+ \begin{align}
+ \begin{split}
+ \Gamma_{0}(k)&=\frac{k^2}{m_\pi^3}\int^{|k_\delta|<k_F}\frac{d^3\vec{k}_\delta}{(2\pi)^3} \frac{1}{(\vec{k}-\vec{k}_\delta)^2+m_\pi^2} \\
+ &=\frac{3}{4}\frac{\rho}{m_\pi^3}\left[  \tilde{k}^2 -\tilde{m}_\pi\tilde{k}^2\left(\arctan\frac{1-\tilde{k}}{\tilde{m}_\pi}+\arctan\frac{1+\tilde{k}}{\tilde{m}_\pi}\right)\right. \\
+ &\left.\qquad\qquad\qquad\qquad\qquad+\frac{1}{4}\left(1-\tilde{k}^2+\tilde{m}_\pi^2\right)\log\frac{\tilde{m}_\pi^2+(\tilde{k}+1)^2}{\tilde{m}_\pi^2+(\tilde{k}-1)^2} \right]
+ \end{split} \\
+ %
+  \begin{split}
+ \Gamma_{1}(k)&=\frac{k}{m_\pi^3}\int^{|k_\delta|<k_F}\frac{d^3\vec{k}_\delta}{(2\pi)^3} \frac{\vec{k}_\delta\cdot\hat{k}}{(\vec{k}-\vec{k}_\delta)^2+m_\pi^2} \\
+ &=\frac{3}{4}\frac{\rho}{m_\pi^3}\left[  (3\tilde{k}^2-\tilde{m}_\pi^2-1)-4\tilde{k}^2\tilde{m}_\pi\left(\arctan\frac{1-\tilde{k}}{\tilde{m}_\pi}+\arctan\frac{1+\tilde{k}}{\tilde{m}_\pi}\right)\right. \\
+ &\left.\qquad\qquad\qquad\qquad\qquad+\frac{(1+\tilde{m}_\pi^2)^2-3\tilde{k}^4+2\tilde{k}^2(1+3\tilde{m}_\pi^2)}{4\tilde{k}}\log\frac{\tilde{m}_\pi^2+(\tilde{k}+1)^2}{\tilde{m}_\pi^2+(\tilde{k}-1)^2} \right]
+ \end{split} \\
+ %
+  \begin{split}
+ \Gamma_{2}(k)&=\frac{k}{m_\pi^3}\int^{|k_\delta|<k_F}\frac{d^3\vec{k}_\delta}{(2\pi)^3} \frac{k_\delta^2}{(\vec{k}-\vec{k}_\delta)^2+m_\pi^2} \\
+ &=\frac{1}{2}\frac{\rho}{m_\pi^3}\left[  (3\tilde{k}^2-9\tilde{m}_\pi^2-1)-6\tilde{m}_\pi(\tilde{k}^2-\tilde{m}_\pi^2)\left(\arctan\frac{1-\tilde{k}}{\tilde{m}_\pi}+\arctan\frac{1+\tilde{k}}{\tilde{m}_\pi}\right)\right. \\
+ &\left.\qquad\qquad\qquad\qquad\qquad+\frac{3\left(\tilde{k}^4+\tilde{m}_\pi^4-6\tilde{k}^2\tilde{m}_\pi^2-1\right)}{4\tilde{k}}\log\frac{\tilde{m}_\pi^2+(\tilde{k}+1)^2}{\tilde{m}_\pi^2+(\tilde{k}-1)^2} \right]
+ \end{split} 
+  \end{align}
+All variables appear in the dimensionless combinations $\tilde{m}_\pi=m_\pi/k_F^{N,P}$ and $\tilde{k}=k/k_F^{N,P}$. For actual calculations, one can replace $k_F$ with the observable densities using \eqref{eq:kF}.
+
 
 \section{\label{app:wNotation}Fourier integrals}
 
