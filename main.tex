@@ -86,6 +86,8 @@
 \newcommand{\sigmaone}{[\vec{\sigma}_1\otimes\vec{\sigma}_2]_1}
 \newcommand{\sigmacross}{\vec{\sigma}_1\times\vec{\sigma}_2}
 
+\newcommand{\Gam}[3]{\Gamma_{#1, I=#2}\left(#3\right)}
+
 \newcommand{\fracphantom}{\vphantom{\frac{1}{1}}}
 
 \newcommand{\lvec}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
@@ -251,14 +253,28 @@ We therefore expect that the $P=0$ approximation is valid for many-body calculat
 + \vec{k}\leftrightarrow\vec{k}'\left.\fracphantom\right]
  \end{split} 
  \end{align}
-Note that neither of these terms contribute for systems of pure neutrons or protons due to the antisymmetrization, consistent with the behavior of the original 3N interactions which also vanish. The functions $\Gamma_{\alpha,I=0,1}(k)=\Gamma_{\alpha,P}(k)\pm\Gamma_{\alpha,N}(k)$ are momentum dependent analogues of the densities \eqref{eq:densities} which arise from integrating over the spectator momentum,
+Here, $\vec{q}=(\vec{k}'-\vec{k})/2$ is the momentum transfer during the interaction. Conservation of energy requires that $|\vec{k}|=|\vec{k}'|$. Note that neither of these terms contribute for systems of pure neutrons or protons due to the antisymmetrization, consistent with the behavior of the original 3N interactions which also vanish. The functions $\Gamma_{\alpha,I=0,1}(k)=\Gamma_{\alpha,P}(k)\pm\Gamma_{\alpha,N}(k)$ are momentum dependent analogues of the densities \eqref{eq:densities} which arise from integrating over the spectator momentum,
 \begin{equation}
 \Gamma_{\alpha,N,P}(k) = \frac{k^{2-\alpha}}{m_\pi^3}\int\frac{d^3\vec{k}_\delta}{(2\pi)^3} n_{N,P}(k_\delta) \frac{\left\{1,k_\delta\cos\theta,k_\delta^2\right\}_\alpha}{(\vec{k}-\vec{k}_\delta)^2+m_\pi^2}
 \end{equation}
 Explicit expressions for these sums with the Fermi-Dirac density of states is given in appendix~\ref{app:momSums}.
 
+The three parts of the two-pion exchange potential are 
+\begin{equation}\begin{split}
+ \veff^1 = - \frac{c_1 m_\pi^5}{2} \left(\frac{g_A}{F_\pi^2}\right)^2
+ \Bigg[& -\rhozero \taudot \; \frac{\vec{\sigma}_1\cdot\vec{q}\;\vec{\sigma}_2\cdot\vec{q}}{(q^2+m_\pi^2)^2} \\
+ &+ \taudot \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot \vec{q}}{q^2+m_\pi^2}\Big[\frac{4}{k^2}\Gam{0}{0}{k/2}-\frac{2}{k}\Gam{1}{0}{k/2}\Big] \\
+ & +3 \Big[ G_{0,I=1}(k/2,k'/2)+G_{1,I=1}(k/2,k'/2)) \Big] \\
+ &+\tauplusthree \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot \vec{q}}{q^2+m_\pi^2}\Big[\frac{4}{k^2}\Gam{0}{1}{k/2}-\frac{2}{k}\Gam{1}{1}{k/2}\Big] \\
+ &- i \taucrossthree  \frac{\vec{\sigma}_1 \cdot \vec{q}\; \vec{\sigma}_2\cdot (\vec{k}+\vec{k}')/2}{q^2+m_\pi^2}\Big[\frac{4}{k^2}\Gam{0}{1}{k/2}-\frac{2}{k}\Gam{1}{1}{k/2}\Big]  \\
+ & -\tau_1^3 \Big[ G_{0,I=1}(k/2,k'/2)+G_{1,I=1}(k/2,k'/2)) \Big]
+ \end{split}
+ \end{equation}
+Where
 \begin{align}
- \veff^{c_1}=-&c_1 m_\pi^5\left(\frac{g_A}{F_\pi^2}\right)^2 \left[ \rhozero\vec{\tau}_1\cdot\vec{\tau}_2 \:\frac{\vec{\sigma}_1\cdot\vec{q}\:\vec{\sigma}_2\cdot\vec{q} }{\left(q^2+m_\pi^2\right)^2} \right]
+G_{0,N}(k,k') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\delta}{(2\pi)^3} n_{N,P}(k_\delta) \frac{(\vec{k}-\vec{k}_\delta)\cdot(\vec{k}'-\vec{k}_\delta) }{[(\vec{k}-\vec{k}_\delta)^2+m_\pi^2][(\vec{k'}-\vec{k}_\delta)^2+m_\pi^2]} \\
+%
+G_{1,N}(k,k') & = \frac{1}{m_\pi^3}\int\frac{d^3\vec{k}_\delta}{(2\pi)^3} n_{N,P}(k_\delta) \frac{i\sigma_1\cdot\left[(\vec{k}'-\vec{k})\times(\vec{k}-\vec{k}_\delta)\right] }{[(\vec{k}-\vec{k}_\delta)^2+m_\pi^2][(\vec{k'}-\vec{k}_\delta)^2+m_\pi^2]}
 \end{align}
 
 DISCUSS: In \cite{PhysRevC.81.024002}, an argument is made that for the interaction in isospin symmetric matter, the effective terms generated from the 3N interaction are partially corrections to 2N 1PE. In particular, $c_D$ term reduces (eqn 24) and $c_E$ enhances (eqn 11) 
